@@ -1,0 +1,41 @@
+* {
+    font-family: monospace;
+    background: transparent;
+    color: #9ecbd2;
+    transition: 0.1s;
+}
+
+#window {
+    color: #3a75ab;
+    border: none;
+
+    background-image: linear-gradient(to bottom, #141216 100%);
+    border-radius: 14px;
+}
+#scroll {
+    border-top-style: solid;
+    border-width: 3px;
+    border-color: #9ecbd2;
+}
+#inner-box {
+    padding-top: 12px;
+}
+#entry {
+  border-style: none;
+  color: #9ecbd2;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 12;
+
+  border-radius: 12px;
+}
+#entry:selected {
+    background-color: #2e2c31;
+    font-weight: bold;
+    outline: none;
+}
+#img {
+  padding: 4px;
+  margin-right: 6px;
+}

@@ -1,0 +1,216 @@
+/* Baseline values for all elements */
+* {
+  font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+/* Values for the bar itself */
+#waybar {
+  background: transparent;
+  color: #c6d0f5;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* Left modules */
+#workspaces,
+#cpu,
+#memory,
+#disk {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  border: none;
+  
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Create a separated panel for workspaces */
+#workspaces {
+  border-radius: 6px;
+}
+
+/* Combined panel for performance metrics */
+#cpu {
+  border-radius: 6px 0 0 6px;
+}
+
+#disk {
+  border-radius: 0 6px 6px 0;
+}
+
+/* Space out the modules */
+#workspaces, #cpu {
+  padding: 2px;
+  margin-left: 7px; 
+}
+
+/* Hover effects */
+#cpu:hover,
+#disk:hover {
+  background-color: rgb(41, 42, 53); 
+}
+
+/* Button effects for workspaces module */
+#workspaces button {
+  color: #babbf1;
+  border-radius: 5px; 
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  color: #99d1db;
+  background-color: rgba(153, 209, 219, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
+}
+
+#workspaces button:hover {
+  background: rgb(41, 42, 53); 
+  color: #c6d0f5;
+}
+
+/* Center modules */
+#clock, #custom-reload {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2);
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Combine clock and reload into one module */
+#clock {
+  border-radius: 6px 0 0 6px;
+}
+
+#custom-reload {
+    border-radius: 0 6px 6px 0;  
+}
+
+/* Center panel hover effects */
+#clock:hover,
+#custom-reload:hover  {
+  background-color: rgba(153, 209, 219, 0.1); 
+}
+
+/* Right modules */
+#bluetooth,
+#pulseaudio-slider,
+#pulseaudio,
+#backlight,
+#network,
+#custom-lock,
+#battery,
+#custom-power {
+  background-color: #1a1b26;
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px; 
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Right modules hover effects */
+#bluetooth:hover,
+#pulseaudio-slider:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#custom-lock:hover,
+#battery:hover,
+#custom-power:hover {
+  background-color: rgb(41, 42, 53);
+}
+
+/* Combine right modules into one panel */
+#bluetooth {
+  margin-left: 0px; 
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#custom-power {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+}
+
+/* Text colours */
+#custom-uptime {
+  color: #babbf1;
+}
+
+#cpu, #disk {
+  color: #c6d0f5;
+}
+
+#clock {
+  color: #99d1db;
+  font-weight: 500;
+}
+
+#pulseaudio {
+  color: #c6d0f5;
+}
+#backlight {
+  color: #c6d0f5;
+}
+
+#network {
+  color: #c6d0f5;
+}
+
+#network.disconnected,
+#custom-power {
+  color: #e78284;
+}
+
+#custom-lock {
+  color: #babbf1;
+}
+#bluetooth {
+  color: #888888;
+  font-size: 16px;
+}
+#bluetooth.on {
+  color: #2196f3;
+}
+#bluetooth.connected {
+  color: #99d1db;
+}
+#battery {
+  color: #99d1db;;
+}
+#battery.charging {
+  color: #a6d189;
+}
+#battery.warning:not(.charging) {
+  color: #e78284;
+}
+
+/* Tooltip styling */
+tooltip {
+  background-color: #1a1b26;
+  color: #dddddd;
+  padding: 5px 12px;
+  margin: 5px 0px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+}
+
