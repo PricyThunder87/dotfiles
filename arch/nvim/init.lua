@@ -1,7 +1,8 @@
--- Preferences
+-- Custom Preferences
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ignorecase = true
+vim.opt.shiftwidth = 4
 
 vim.api.nvim_create_autocmd("InsertEnter", {
   callback = function()
@@ -15,68 +16,40 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   end,
 })
 
--- Keybind helper
-local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
 
--- Ctrl+Shift+C to copy to clipboard (insert mode)
-map("i", "<C-S-C>", '<Esc>"+y`^', opts)
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
--- Shift+Arrow to select text (insert mode)
-map("i", "<S-Left>",  "<C-O>v<Left>",  opts)
-map("i", "<S-Right>", "<C-O>v<Right>", opts)
-map("i", "<S-Up>",    "<C-O>v<Up>",    opts)
-map("i", "<S-Down>",  "<C-O>v<Down>",  opts)
-
--- Insert line above / below without entering insert mode
-local function insert_line_above()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line(".") - 1, string.rep(" ", indent))
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
 
-local function insert_line_below()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line("."), string.rep(" ", indent))
-end
+vim.opt.rtp:prepend(lazypath)
 
-map("n", "<M-O>", insert_line_above, opts)
-map("n", "<M-o>", insert_line_below, opts)
+local lazy_config = require "configs.lazy"
 
--- Alt+k / Alt+j: move line or visual selection
-map("n", "<M-k>", ":m .-2<CR>==", opts)
-map("n", "<M-j>", ":m .+1<CR>==", opts)
-map("v", "<M-k>", ":<C-U>execute \"'<,'>move '<-2\"<CR>gv", opts)
-map("v", "<M-j>", ":<C-U>execute \"'<,'>move '>+1\"<CR>gv", opts)
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
 
--- H / L: beginning / end of line
-map("n", "H", "^", opts)
-map("n", "L", "$", opts)
+  { import = "plugins" },
+}, lazy_config)
 
--- Keep visual mode after indenting
-map("v", "<", "<gv", opts)
-map("v", ">", ">gv", opts)
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
--- Ctrl / Shift Enter: new line below / above (insert mode)
-local function insert_newline_below()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line("."), string.rep(" ", indent))
-  vim.cmd("normal! j0")
-end
+require "options"
+require "autocmds"
 
-local function insert_newline_above()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line(".") - 1, string.rep(" ", indent))
-  vim.cmd("normal! k0")
-end
-
-map("i", "<C-CR>", function()
-  vim.cmd("stopinsert")
-  insert_newline_below()
-  vim.cmd("startinsert")
-end, opts)
-
-map("i", "<S-CR>", function()
-  vim.cmd("stopinsert")
-  insert_newline_above()
-  vim.cmd("startinsert")
-end, opts)
+vim.schedule(function()
+  require "mappings"
+end)
