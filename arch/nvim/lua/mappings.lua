@@ -1,7 +1,5 @@
 require "nvchad.mappings"
 
-
-
 local map = vim.keymap.set
 
 -- Custom
@@ -20,7 +18,7 @@ local function insert_line_below()
 end
 
 map("n", "<M-O>", insert_line_above, opts)
-map("n", "<M-O>", insert_line_below, opts)
+map("n", "<M-o>", insert_line_below, opts)
 
 -- Alt+k/j to move line or visual selection up/down
 map("n", "<M-k>", ":m .-2<CR>==", opts)
