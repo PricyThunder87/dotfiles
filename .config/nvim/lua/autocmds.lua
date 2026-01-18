@@ -1,1 +1,1 @@
-require "nvchad.autocmds"
+../../../home/.config/nvim/lua/autocmds.lua

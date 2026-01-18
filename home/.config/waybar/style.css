@@ -11,7 +11,7 @@
 
 /* Values for the bar itself */
 #waybar {
-	background: #fff;
+	background: transparent;
 	color: #c6d0f5;
 	margin: 0;
 	font-weight: 500;

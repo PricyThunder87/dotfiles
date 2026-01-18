@@ -1,3 +1,1 @@
-#! /usr/bin/env bash
-pkill waybar 
-waybar & disown
+../../../home/.config/waybar/scripts/reload.sh
