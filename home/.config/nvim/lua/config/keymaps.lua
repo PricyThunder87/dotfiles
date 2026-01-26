@@ -5,6 +5,12 @@
 -- Telescope
 vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
 
+-- Code Runner
+vim.keymap.set("n", "<F5>", ":RunCode<cr>", opts)
+
+-- Hop
+vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
+
 -- Insert lines without entering insert mode
 local function insert_line_above()
   local indent = vim.fn.indent(vim.fn.line("."))
