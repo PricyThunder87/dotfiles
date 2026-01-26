@@ -1,0 +1,5 @@
+home/.config/fish/fish_variables
+home/.config/nvim/.neoconf.json
+home/.config/nvim/lazy*.json
+home/.ssh/known_hosts
+home/.ssh/known_hosts.old
