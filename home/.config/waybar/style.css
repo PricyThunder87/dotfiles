@@ -102,7 +102,7 @@
 }
 
 /* Right modules */
-#bluetooth, #pulseaudio, #backlight, #network, #battery, #custom-power {
+#custom-spotify, #bluetooth, #pulseaudio, #backlight, #network, #battery, #custom-power {
 	background-color: #1a1b26;
 	padding: 0.3rem 0.7rem;
 	margin: 5px 0;
@@ -113,12 +113,12 @@
 	transition: 0.2s ease-in-out;
 }
 
-#bluetooth:hover, #pulseaudio:hover, #backlight:hover, #network:hover, #battery:hover, #custom-power:hover {
+#custom-spotify:hover, #bluetooth:hover, #pulseaudio:hover, #backlight:hover, #network:hover, #battery:hover, #custom-power:hover {
 	background-color: rgb(41, 42, 53)
 }
 
 /* Combine right modules into one panel */
-#bluetooth {
+#custom-spotify {
 	margin-left: 8px;
 	border-radius: 6px 0 0 6px;
 }

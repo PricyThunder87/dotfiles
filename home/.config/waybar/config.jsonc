@@ -18,6 +18,7 @@
 		"custom/reload"
 	],
 	"modules-right": [
+    "custom/spotify",
 		"bluetooth",
 		"network",
 		"pulseaudio",
