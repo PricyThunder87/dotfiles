@@ -2,28 +2,19 @@
   "cpu": {
     "interval": 1,
     "format": "   {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ],
-    "on-click": "kitty -e btop"
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "kitty -e btop",
   },
   "memory": {
     "interval": 1,
     "format": "  {used}GB / {total}GB ({percentage}%)",
-    "on-click": "kitty -e btop"
+    "on-click": "kitty -e btop",
   },
   "disk": {
     "interval": 30,
     "path": "/",
     "format": " {percentage_used}%",
-    "onclick": "qdirstat"
+    "on-click": "qdirstat",
   },
   "custom/spotify": {
     "exec": "python3 /home/noahsakko/.config/waybar/scripts/mediaplayer.py --player spotify",
@@ -31,18 +22,19 @@
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
+    "on-scroll-down": "playerctl previous",
   },
   "clock": {
     "timezone": "Europe/Amsterdam",
     "tooltip": false,
     "format": "{:%H:%M:%S - %A, %d %B %Y}",
-    "interval": 1
+    "interval": 1,
+    "on-click": "gnome-clocks",
   },
   "custom/reload": {
     "format": "󰑓",
     "tooltip": false,
-    "on-click": "$HOME/.config/waybar/scripts/reload.sh"
+    "on-click": "$HOME/.config/waybar/scripts/reload.sh",
   },
   "bluetooth": {
     "format": "",
@@ -52,10 +44,10 @@
     "format-icons": {
       "on": "󰂯",
       "off": "󰂲",
-      "connected": "󰂱"
+      "connected": "󰂱",
     },
     "on-click": "blueman-manager",
-    "tooltip-format-connected": "{device_enumerate}"
+    "tooltip-format-connected": "{device_enumerate}",
   },
   "network": {
     "format-wifi": "󰤨",
@@ -63,55 +55,37 @@
     "format-disconnected": "󰤫",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "kitty nmtui"
+    "on-click": "kitty nmtui",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}% 󰂲",
     "format-muted": "",
     "format-icons": {
-      "default": [
-        "",
-        "",
-        " "
-      ]
+      "default": ["", "", " "],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
   },
   "backlight": {
     "format": "{icon}  {percent}%",
-    "format-icons": [
-      "",
-      "󰃜",
-      "󰃛",
-      "󰃞",
-      "󰃝",
-      "󰃟",
-      "󰃠"
-    ]
+    "format-icons": ["", "󰃜", "󰃛", "󰃞", "󰃝", "󰃟", "󰃠"],
   },
   "battery": {
     "interval": 2,
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon}  {capacity}%",
     "format-full": "{icon}  {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon}  {time}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", ""],
   },
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "on-click": "$HOME/.config/waybar/scripts/powermenu.sh"
-  }
+    "on-click": "$HOME/.config/waybar/scripts/powermenu.sh",
+  },
 }
