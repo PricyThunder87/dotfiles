@@ -3,60 +3,22 @@
 * {
   font-family: "JetBrainsMono Nerd Font", "NotoSans Nerd Font", monospace;
   font-size: 13px;
-  min-height: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
 }
 
 /* Values for the bar itself */
 #waybar {
   background: transparent;
   color: #c6d0f5;
-  margin: 0;
   font-weight: 500;
 }
 
-/* Left modules */
-#workspaces,
-#cpu,
-#memory,
-#disk {
-  background-color: #1a1b26;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-width: 0;
-  border: none;
-
-  transition: 0.2s ease-in-out;
-}
-
-/* Create a separated panel for workspaces */
-#workspaces {
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: rgba(26, 27, 38, 0.75);
+  padding: 4px 4px;
+  margin: 5px;
   border-radius: 6px;
-}
-
-/* Combined panel for performance metrics */
-#cpu {
-  border-radius: 6px 0 0 6px;
-}
-
-#disk {
-  border-radius: 0 6px 6px 0;
-}
-
-/* Space out the modules */
-#workspaces,
-#cpu {
-  padding: 2px;
-  margin-left: 7px;
-}
-
-/* Hover effects */
-#cpu:hover,
-#disk:hover {
-  background-color: rgb(41, 42, 53);
 }
 
 /* Button effects for workspaces module */
@@ -65,6 +27,7 @@
   border-radius: 5px;
   padding: 0.3rem 0.6rem;
   background: transparent;
+  margin: 2px;
   transition: all 0.2s ease-in-out;
   border: none;
   outline: none;
@@ -81,69 +44,39 @@
   color: #c6d0f5;
 }
 
-/* Center modules */
+#cpu,
+#memory,
+#disk,
 #clock,
-#custom-reload {
-  background-color: #1a1b26;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0;
-  min-width: 0;
-  border: none;
-
-  transition: 0.2s ease-in-out;
-}
-
-/* Combine panel for clock and reload button */
-#clock {
-  border-radius: 6px 0 0 6px;
-}
-
-#custom-reload {
-  border-radius: 0 6px 6px 0;
-}
-
-/* Hover effects */
-#clock:hover,
-#custom-reload:hover {
-  background-color: rgba(153, 209, 219, 0.1);
-}
-
-/* Right modules */
+#custom-reload,
 #custom-spotify,
 #bluetooth,
+#network,
 #pulseaudio,
 #backlight,
-#network,
 #battery,
 #custom-power {
-  background-color: #1a1b26;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0;
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 0;
+  border-radius: 6px;
+  margin: 0 5px;
+  padding: 0 8px;
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: none;
-  transition: 0.2s ease-in-out;
 }
 
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#clock:hover,
+#custom-reload:hover,
 #custom-spotify:hover,
 #bluetooth:hover,
+#network:hover,
 #pulseaudio:hover,
 #backlight:hover,
-#network:hover,
 #battery:hover,
 #custom-power:hover {
-  background-color: rgb(41, 42, 53);
-}
-
-/* Combine right modules into one panel */
-#custom-spotify {
-  margin-left: 8px;
-  border-radius: 6px 0 0 6px;
-}
-#custom-power {
-  margin-right: 7px;
-  border-radius: 0 6px 6px 0;
+  background-color: rgba(32, 59, 79, 0.75);
 }
 
 /* Text colours */
