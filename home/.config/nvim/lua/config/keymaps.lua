@@ -8,6 +8,8 @@ vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
 -- Code Runner
 vim.keymap.set("n", "<F5>", ":RunCode<cr>", opts)
 
+-- Avalonia.Nvim
+vim.keymap.set("n", "<F6>", "require('avalonia').open_preview()")
 -- Hop
 vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
 
