@@ -11,8 +11,13 @@ vim.keymap.set("n", "<F5>", ":RunCode<cr>", opts)
 -- Hop
 vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
 
--- Semicolon and newline shortcut
+-- Shortcuts to append semicolon/colon to end of line
+-- ;
+vim.keymap.set("n", "<C-;>", "A;", opts)
 vim.keymap.set("i", "<C-;>", "<Esc>A;", opts)
+-- ,
+vim.keymap.set("n", "<C-,>", "A,", opts)
+vim.keymap.set("i", "<C-,>", "<Esc>A,", opts)
 
 -- Insert lines without entering insert mode
 local function insert_line_above()
