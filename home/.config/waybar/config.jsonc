@@ -1,29 +1,28 @@
 {
-	"include": [
-		"./modules.jsonc"
-	],
-	"layer": "top",
-	"position": "top",
-	"margin-top": 5,
-	"margin-bottom": -5,
-	"spacing": 0,
-	"modules-left": [
-		"hyprland/workspaces",
-		"cpu",
-		"memory",
-		"disk"
-	],
-	"modules-center": [
-		"clock",
-		"custom/reload"
-	],
-	"modules-right": [
-    "custom/spotify",
-		"bluetooth",
-		"network",
-		"pulseaudio",
-		"backlight",
-		"battery",
-		"custom/power"
-	]
+    "include": [
+        "./modules.jsonc"
+    ],
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-bottom": -5,
+    "spacing": 0,
+    "modules-left": [
+        "hyprland/workspaces",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/reload"
+    ],
+    "modules-right": [
+        "custom/spotify",
+        "bluetooth",
+        "custom/vpn",
+        "network",
+        "pulseaudio",
+        "custom/power"
+    ]
 }

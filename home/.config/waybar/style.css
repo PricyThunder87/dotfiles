@@ -50,6 +50,7 @@
 #custom-reload,
 #custom-spotify,
 #bluetooth,
+#custom-vpn,
 #network,
 #pulseaudio,
 #backlight,
@@ -69,6 +70,7 @@
 #custom-reload:hover,
 #custom-spotify:hover,
 #bluetooth:hover,
+#custom-vpn:hover,
 #network:hover,
 #pulseaudio:hover,
 #backlight:hover,
@@ -87,6 +89,10 @@
 #clock {
   color: #99d1db;
   font-weight: 500;
+}
+
+#custom-vpn.active {
+    color: #7cad66;
 }
 
 #pulseaudio,
@@ -130,3 +136,4 @@ tooltip {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   font-size: 12px;
 }
+
