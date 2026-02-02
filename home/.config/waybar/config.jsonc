@@ -25,6 +25,5 @@
         "pulseaudio",
         "backlight",
         "battery",
-        "custom/power"
     ]
 }
