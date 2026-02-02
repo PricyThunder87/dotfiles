@@ -18,3 +18,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     vim.opt.relativenumber = true
   end,
 })
+
+-- Disable auto-extension of a comment on a newline
+vim.api.nvim_create_autocmd('BufWinEnter', {
+    command = 'set formatoptions-=cro',
+})
