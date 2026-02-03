@@ -11,6 +11,10 @@ vim.keymap.set("n", "<F5>", ":RunCode<cr>", opts)
 -- Hop
 vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
 
+-- Move cursor to centre of screen when scrolling
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true })
+
 -- Shortcuts to append semicolon/colon to end of line
 -- ;
 vim.keymap.set("n", "<C-;>", "A;<Esc>", opts)
@@ -20,18 +24,8 @@ vim.keymap.set("n", "<C-,>", "A,<Esc>", opts)
 vim.keymap.set("i", "<C-,>", "<Esc>A,", opts)
 
 -- Insert lines without entering insert mode
-local function insert_line_above()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line(".") - 1, string.rep(" ", indent))
-end
-
-local function insert_line_below()
-  local indent = vim.fn.indent(vim.fn.line("."))
-  vim.fn.append(vim.fn.line("."), string.rep(" ", indent))
-end
-
-vim.keymap.set("n", "<M-O>", insert_line_above, opts)
-vim.keymap.set("n", "<M-o>", insert_line_below, opts)
+vim.keymap.set("n", "<M-o>", "o<Esc>", opts)
+vim.keymap.set("n", "<M-O>", "O<Esc>", opts)
 
 -- Alt+k/j to move line or visual selection up/down
 vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", opts)
@@ -40,8 +34,8 @@ vim.keymap.set("v", "<M-k>", ":<C-U>execute \"'<,'>move '<-2\"<CR>gv", opts)
 vim.keymap.set("v", "<M-j>", ":<C-U>execute \"'<,'>move '>+1\"<CR>gv", opts)
 
 -- H / L: beginning / end of line
-vim.keymap.set("n", "H", "^", opts)
-vim.keymap.set("n", "L", "$", opts)
+vim.keymap.set({ "n", "v" }, "H", "^", opts)
+vim.keymap.set({ "n", "v" }, "L", "$", opts)
 
 -- Keep visual mode after indenting
 vim.keymap.set("v", "<", "<gv", opts)
