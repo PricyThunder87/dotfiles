@@ -19,10 +19,11 @@
     ],
     "modules-right": [
         "custom/spotify",
-        "bluetooth",
         "custom/vpn",
+        "bluetooth",
         "network",
         "pulseaudio",
-        "custom/power"
+        "backlight",
+        "battery",
     ]
 }
