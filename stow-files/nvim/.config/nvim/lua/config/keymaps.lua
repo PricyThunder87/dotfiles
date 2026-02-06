@@ -15,7 +15,7 @@ vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true })
 
--- Shortcuts to append semicolon/comma to end of line
+-- Shortcuts to append semicolon/comma/brace to end of line
 -- ;
 vim.keymap.set("n", "<C-;>", "A;<Esc>", opts)
 vim.keymap.set("i", "<C-;>", "<Esc>A;", opts)
