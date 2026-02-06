@@ -1,6 +1,11 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Use starship
     starship init fish | source
+
+    # Enable Vi bindings
+    set -g fish_key_bindings fish_vi_key_bindings
+    set -g fish_cursor_insert block
+    bind --mode insert j,k 'set fish_bind_mode default; commandline -f repaint'
 
     # Remove greeting message
     function fish_greeting
