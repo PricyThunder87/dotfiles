@@ -11,3 +11,6 @@ vim.opt.relativenumber = true
 -- Disable auto formatting on write
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
+
+-- Disable animations
+vim.g.snacks_animate = false
