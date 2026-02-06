@@ -40,3 +40,4 @@ window-padding-balance = true
 
 # Unbind default ghostty keybindings
 keybind = ctrl+,=unbind
+keybind = ctrl+Enter=unbind
