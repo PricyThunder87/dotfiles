@@ -3,12 +3,12 @@
         "interval": 1,
         "format": "   {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "on-click": "kitty -e btop"
+        "on-click": "ghostty -e btop"
     },
     "memory": {
         "interval": 1,
         "format": "  {used}GB / {total}GB ({percentage}%)",
-        "on-click": "kitty -e btop"
+        "on-click": "ghostty -e btop"
     },
     "disk": {
         "interval": 30,
@@ -64,7 +64,7 @@
         "format-disconnected": "󰤫",
         "interval": 5,
         "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "kitty nmtui"
+        "on-click": "ghostty nmtui"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
