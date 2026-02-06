@@ -12,6 +12,7 @@
 
 # Set default font
 font-family = JetBrainsMono Nerd Font
+
 # Synthetise a missing font style
 font-synthetic-style = bold,italic,bold-italic
 
@@ -28,9 +29,14 @@ selection-clear-on-typing = false
 
 # Don't move cursor on mouse click
 cursor-click-to-move = true
+
 # Hide mouse when typing
 mouse-hide-while-typing = true
 
+# Padding
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
+
+# Unbind default ghostty keybindings
+keybind = ctrl+,=unbind
