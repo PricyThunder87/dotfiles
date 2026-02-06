@@ -1,5 +1,0 @@
-stow-files/fish/.config/fish/fish_variables
-stow-files/nvim/.config/nvim/.neoconf.json
-stow-files/nvim/.config/nvim/lazy*.json
-stow-files/ssh/.ssh/known_hosts
-stow-files/ssh/.ssh/known_hosts.old
