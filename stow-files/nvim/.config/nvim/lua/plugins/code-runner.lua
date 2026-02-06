@@ -1,13 +1,17 @@
 return {
-  "CRAG666/code_runner.nvim",
-  config = true,
-  filetype = {
-    java = {
-      "cd $dir &&",
-      "javac $fileName &&",
-      "java $fileNameWithoutExt",
+    "CRAG666/code_runner.nvim",
+    config = true,
+    filetype = {
+        java = {
+            "cd $dir &&",
+            "javac $fileName &&",
+            "java $fileNameWithoutExt",
+        },
+        python = "python3 -u",
+        typescript = "deno run",
+        rust = {
+            "cargo build",
+            "cargo run",
+        },
     },
-    python = "python3 -u",
-    typescript = "deno run",
-  },
 }
