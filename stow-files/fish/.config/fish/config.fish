@@ -33,4 +33,9 @@ if status is-interactive
     # Set neovim as default editor 
     set -gx EDITOR nvim
     set -gx VISUAL nvim
+
+    # Auto-start tmux
+    if test -z "$TMUX"
+        tmux attach; or tmux new-session
+    end
 end
