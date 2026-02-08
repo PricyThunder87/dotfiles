@@ -24,6 +24,7 @@
         "network",
         "pulseaudio",
         "backlight",
-        "battery"
+        "battery",
+        "custom/power"
     ]
 }
