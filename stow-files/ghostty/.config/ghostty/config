@@ -44,3 +44,6 @@ keybind = ctrl+Enter=unbind
 
 # Don't inherit working directory
 window-inherit-working-directory = false
+
+# Don't show warning when closing mid-process
+confirm-close = false
