@@ -46,4 +46,4 @@ keybind = ctrl+Enter=unbind
 window-inherit-working-directory = false
 
 # Don't show warning when closing mid-process
-confirm-close = false
+confirm-close-surface = false
