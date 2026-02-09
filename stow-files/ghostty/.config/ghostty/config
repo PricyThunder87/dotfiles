@@ -41,6 +41,7 @@ window-padding-balance = true
 # Unbind default ghostty keybindings
 keybind = ctrl+,=unbind
 keybind = ctrl+Enter=unbind
+keybind = ctrl+shift+Enter=unbind
 
 # Don't inherit working directory
 window-inherit-working-directory = false
