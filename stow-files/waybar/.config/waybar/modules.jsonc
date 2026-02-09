@@ -64,7 +64,7 @@
         "format-disconnected": "󰤫",
         "interval": 5,
         "tooltip-format": "{essid} ({signalStrength}%)",
-        "on-click": "ghostty nmtui"
+        "on-click": "ghostty -e nmtui"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
