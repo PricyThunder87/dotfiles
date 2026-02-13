@@ -12,12 +12,25 @@ vim.b.autoformat = false -- buffer-local
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
+-- Highlight trailing whitespace
+vim.opt.list = true
+vim.opt.listchars:append("trail:·")
+
+vim.diagnostic.config({
+	virtual_text = {
+	prefix = "●",
+	format = function(diagnostic)
+	    return string.format("%s (%s)", diagnostic.message, diagnostic.source)
+	end,
+	},
+})
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  pattern = "*",
-  callback = function()
+    pattern = "*",
+    callback = function()
 	vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
-  end,
+    end,
 })
 
 -- Disable animations
