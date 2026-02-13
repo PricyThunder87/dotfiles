@@ -1,10 +1,14 @@
 return {
     "mason-org/mason-lspconfig.nvim",
-    opts = {},
+    opts = {
+	handlers = {
+	    lua_ls = function() end,
+	},
+    },
     dependencies = {
 	{
 	    "mason-org/mason.nvim",
-	    opts = {}
+	    opts = {},
 	},
 	"neovim/nvim-lspconfig",
     },
