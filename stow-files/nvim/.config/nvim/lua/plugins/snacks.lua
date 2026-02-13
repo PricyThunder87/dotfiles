@@ -11,7 +11,21 @@ return {
 	explorer = { enabled = true },
 	indent = { enabled = true },
 	input = { enabled = true },
-	picker = { enabled = true },
+	picker = {
+	    enabled = true,
+	    sources = {
+		explorer = {
+		    win = {
+			list = {
+			    wo = {
+				number = true,
+				relativenumber = true,
+			    }
+			}
+		    }
+		}
+	    }
+	},
 	notifier = { enabled = true },
 	quickfile = { enabled = true },
 	scope = { enabled = true },
