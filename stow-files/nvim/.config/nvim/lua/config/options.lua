@@ -1,7 +1,3 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 vim.opt.ignorecase = true
 vim.opt.shiftwidth = 4
 
@@ -11,6 +7,18 @@ vim.opt.relativenumber = true
 -- Disable auto formatting on write
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
+
+-- Highlight current line number
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  pattern = "*",
+  callback = function()
+	vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+  end,
+})
 
 -- Disable animations
 vim.g.snacks_animate = false

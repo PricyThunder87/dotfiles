@@ -1,6 +1,9 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Open Lazy
+vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 
 -- Telescope
 vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
@@ -22,12 +25,6 @@ vim.keymap.set("i", "<C-;>", "<Esc>A;", opts)
 -- ,
 vim.keymap.set("n", "<C-,>", "A,<Esc>", opts)
 vim.keymap.set("i", "<C-,>", "<Esc>A,", opts)
--- {
-vim.keymap.set("n", "<C-[>", "A {<Esc>", opts)
-vim.keymap.set("i", "<C-[>", "<Esc>A {", opts)
--- }
-vim.keymap.set("n", "<C-]>", "A }<Esc>", opts)
-vim.keymap.set("i", "<C-]>", "<Esc>A }", opts)
 
 -- Insert lines without entering insert mode
 vim.keymap.set("n", "<M-o>", "o<Esc>", opts)
