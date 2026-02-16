@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 -- Telescope
 vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
 
+vim.keymap.set({"n", "x"}, "<leader>a", ":lua require('fastaction').code_action()<CR>", opts)
 
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
