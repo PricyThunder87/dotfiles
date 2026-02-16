@@ -8,11 +8,6 @@ vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
 -- Telescope
 vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
 
--- Code Runner
-vim.keymap.set("n", "<F5>", ":RunCode<cr>", opts)
-
--- Hop
-vim.keymap.set("n", "<Tab>", ":HopWord<cr>", opts)
 
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
