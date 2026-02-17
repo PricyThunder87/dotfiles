@@ -1,20 +1,8 @@
 return {
-    {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {
-	    transparent = true,
-	    styles = {
-		sidebars = "transparent",
-		floats = "transparent",
-	    }
-	},
-	config = function(_, opts)
-	    local tokyonight = require("tokyonight")
-	    tokyonight.setup(opts)
-	    tokyonight.load()
-	    vim.cmd.colorscheme("tokyonight")
-	end,
-    },
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000 ,
+    config = function()
+	vim.cmd.colorscheme "gruvbox"
+    end,
+    opts = ...
 }
