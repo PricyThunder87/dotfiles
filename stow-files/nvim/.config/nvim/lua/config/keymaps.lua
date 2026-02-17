@@ -39,25 +39,35 @@ vim.keymap.set({ "n", "v" }, "L", "$", opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
--- Ctrl / Shift Enter: new line below / above (insert mode)
-local function insert_newline_below()
-  vim.cmd("normal! o")
+-- Helper to feed keys safely in Lua
+local function feed(keys)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
 end
 
-local function insert_newline_above()
-  vim.cmd("normal! O")
+-- Ctrl + Enter: New line below with proper indent
+local function insert_newline_below()
+    feed("<Esc>o")
 end
+
+-- Shift + Enter: New line above with proper indent
+local function insert_newline_above()
+    feed("<Esc>O")
+end
+
+-- Example Keybindings (adjust for your specific terminal/OS)
+vim.keymap.set('i', '<C-CR>', insert_newline_below, { desc = "Insert line below" })
+vim.keymap.set('i', '<S-CR>', insert_newline_above, { desc = "Insert line above" })
 
 vim.keymap.set("i", "<C-CR>", function()
-  vim.cmd("stopinsert")
-  insert_newline_below()
-  vim.cmd("startinsert")
+    vim.cmd("stopinsert")
+    insert_newline_below()
+    vim.cmd("startinsert")
 end, opts)
 
 vim.keymap.set("i", "<S-CR>", function()
-  vim.cmd("stopinsert")
-  insert_newline_above()
-  vim.cmd("startinsert")
+    vim.cmd("stopinsert")
+    insert_newline_above()
+    vim.cmd("startinsert")
 end, opts)
 
 vim.keymap.set("i", "jk", "<ESC>")

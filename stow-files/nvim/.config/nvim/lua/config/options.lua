@@ -4,6 +4,9 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+
 -- Disable auto formatting on write
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
