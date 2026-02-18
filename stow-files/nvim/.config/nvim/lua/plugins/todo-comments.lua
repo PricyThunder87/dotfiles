@@ -1,5 +1,6 @@
 return {
     "folke/todo-comments.nvim",
+    Lazy = false,
     cmd = { "TodoTrouble", "TodoTelescope" },
     opts = {},
     -- stylua: ignore
