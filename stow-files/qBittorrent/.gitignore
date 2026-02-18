@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 .config/qBittorrent/categories.json
 .config/qBittorrent/qBittorrent-data.conf
 .config/qBittorrent/qBittorrent.conf
 .config/qBittorrent/rss/feeds.json
 .config/qBittorrent/watched_folders.json
+=======
+categories.json
+qBittorrent-data.conf
+qBittorrent.conf
+rss/
+watched_folders.json
+>>>>>>> 1a6c276 (Add .gitignore for qBittorrent files)
