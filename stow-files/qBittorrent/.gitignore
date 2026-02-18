@@ -7,7 +7,6 @@
 =======
 categories.json
 qBittorrent-data.conf
-qBittorrent.conf
 rss/
 watched_folders.json
 >>>>>>> 1a6c276 (Add .gitignore for qBittorrent files)
