@@ -5,4 +5,8 @@ return {
 	priority = 1000,
 	opts = {},
     },
+    {
+	"neovim/nvim-lspconfig",
+	opts = { diagnostics = { virtual_text = false } },
+    }
 }
