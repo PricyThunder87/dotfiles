@@ -7,6 +7,9 @@ vim.opt.relativenumber = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
+-- Always yank to clipboard
+vim.opt.clipboard:append("unnamedplus")
+
 -- Disable auto formatting on write
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
