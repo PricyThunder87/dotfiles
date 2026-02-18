@@ -18,15 +18,6 @@ vim.opt.cursorline = true
 vim.opt.list = true
 vim.opt.listchars:append("trail:·")
 
-vim.diagnostic.config({
-	virtual_text = {
-	prefix = "●",
-	format = function(diagnostic)
-	    return string.format("%s (%s)", diagnostic.message, diagnostic.source)
-	end,
-	},
-})
-
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
