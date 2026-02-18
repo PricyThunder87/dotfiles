@@ -13,7 +13,6 @@ vim.b.autoformat = false -- buffer-local
 
 -- Highlight current line number
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
 
 -- Highlight trailing whitespace
 vim.opt.list = true
