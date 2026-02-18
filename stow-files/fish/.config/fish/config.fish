@@ -28,6 +28,10 @@ if status is-interactive
     # Aliases
     alias su "su -m"
     alias cat bat
+    alias ga "git add"
+    alias gc "git commit"
+    alias gcm "git commit -m"
+    alias gp "git push"
 
     # Set neovim as default editor 
     set -gx EDITOR nvim
