@@ -58,7 +58,6 @@ return {
 		{ name = "nvim_lsp", priority = 900 },
 		{ name = "luasnip",  priority = 800 },
 		{ name = "path",     priority = 700 },
-		{ name = "buffer",   priority = 500 },
 	    }),
 
 	    sorting = {
