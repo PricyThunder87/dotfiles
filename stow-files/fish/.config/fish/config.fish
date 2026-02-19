@@ -28,6 +28,21 @@ if status is-interactive
     # Aliases
     alias su "su -m"
     alias cat bat
+    alias ga "git add"
+    alias gc "git commit"
+    alias gcm "git commit -m"
+    alias gp "git push"
+
+    # Line counter (ignores empty lines and comments)
+    function countlines
+	set total 0
+	for file in $argv
+	    set count (grep -Ev '^\s*((//)|#|$)' $file | wc -l)
+	    printf "%s: %d\n" $file $count
+	    set total (math $total + $count)
+	end
+	echo "Total: $total"
+    end
 
     # Set neovim as default editor 
     set -gx EDITOR nvim
