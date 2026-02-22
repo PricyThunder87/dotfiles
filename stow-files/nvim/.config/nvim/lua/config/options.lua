@@ -14,6 +14,11 @@ vim.opt.clipboard:append("unnamedplus")
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
 
+-- Make lines wrap and break at convenient points
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 -- Highlight current line number
 vim.opt.cursorline = true
 
