@@ -3,16 +3,16 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Open Lazy
-vim.keymap.set("n", "<leader>l", ":Lazy<cr>")
+vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 
 -- Telescope
-vim.keymap.set("n", "<C-t>", ":Telescope<cr>", opts)
+vim.keymap.set("n", "<C-t>", "<cmd>Telescope<cr>")
 
 -- LSP code actions
-vim.keymap.set({"n", "x"}, "<leader>a", ":lua require('fastaction').code_action()<CR>", opts)
+vim.keymap.set({"n", "x"}, "<leader>a", "<cmd>lua require('fastaction').code_action()<cr>")
 vim.keymap.set({"n", "x"}, "<leader>ca", function()
     vim.lsp.buf.code_action({ apply = true })
-end, opts)
+end)
 
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
@@ -20,29 +20,29 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true })
 
 -- Shortcuts to append semicolon/comma/brace to end of line
 -- ;
-vim.keymap.set("n", "<C-;>", "A;<Esc>", opts)
-vim.keymap.set("i", "<C-;>", "<Esc>A;", opts)
+vim.keymap.set("n", "<C-;>", "A;<Esc>")
+vim.keymap.set("i", "<C-;>", "<Esc>A;")
 -- ,
-vim.keymap.set("n", "<C-,>", "A,<Esc>", opts)
-vim.keymap.set("i", "<C-,>", "<Esc>A,", opts)
+vim.keymap.set("n", "<C-,>", "A,<Esc>")
+vim.keymap.set("i", "<C-,>", "<Esc>A,")
 
 -- Insert lines without entering insert mode
-vim.keymap.set("n", "<M-o>", "o<Esc>", opts)
-vim.keymap.set("n", "<M-O>", "O<Esc>", opts)
+vim.keymap.set("n", "<M-o>", "o<Esc>")
+vim.keymap.set("n", "<M-O>", "O<Esc>")
 
 -- Alt+k/j to move line or visual selection up/down
-vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", opts)
-vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", opts)
-vim.keymap.set("v", "<M-k>", ":<C-U>execute \"'<,'>move '<-2\"<CR>gv", opts)
-vim.keymap.set("v", "<M-j>", ":<C-U>execute \"'<,'>move '>+1\"<CR>gv", opts)
+vim.keymap.set("n", "<M-k>", "<cmd>m .-2<CR>==")
+vim.keymap.set("n", "<M-j>", "<cmd>m .+1<CR>==")
+vim.keymap.set("v", "<M-k>", "<cmd><C-U>execute \"'<,'>move '<-2\"<CR>gv")
+vim.keymap.set("v", "<M-j>", "<cmd><C-U>execute \"'<,'>move '>+1\"<CR>gv")
 
 -- H / L: beginning / end of line
-vim.keymap.set({ "n", "v" }, "H", "^", opts)
-vim.keymap.set({ "n", "v" }, "L", "$", opts)
+vim.keymap.set({ "n", "v" }, "H", "^")
+vim.keymap.set({ "n", "v" }, "L", "$")
 
 -- Keep visual mode after indenting
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Helper to feed keys safely in Lua
 local function feed(keys)
@@ -67,12 +67,12 @@ vim.keymap.set("i", "<C-CR>", function()
     vim.cmd("stopinsert")
     insert_newline_below()
     vim.cmd("startinsert")
-end, opts)
+end)
 
 vim.keymap.set("i", "<S-CR>", function()
     vim.cmd("stopinsert")
     insert_newline_above()
     vim.cmd("startinsert")
-end, opts)
+end)
 
 vim.keymap.set("i", "jk", "<ESC>")
