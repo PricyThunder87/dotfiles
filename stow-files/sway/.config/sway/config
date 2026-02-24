@@ -1,0 +1,203 @@
+########################
+### VARIABLES
+########################
+
+set $mod Mod4
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $term ghostty
+set $file_explorer thunar
+set $browser firefox
+
+########################
+### AUTOSTART
+########################
+
+# Top header bar
+exec waybar
+# Wallpaper
+exec swaybg -i /home/noahsakko/.dotfiles/wallpapers/house-in-the-snow.png -m fill
+# Clipboard manager
+exec copyq --start-server
+# Keyring daemon
+exec gnome-keyring-daemon --start --components=secrets
+# Idle/lock manager
+exec swayidle -w \
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
+# Set cursor theme
+seat seat0 xcursor_theme Bibata_Spirit 32
+
+########################
+### GENERAL LOOK & FEEL
+########################
+
+# Gaps (hide when only one window on workspace)
+gaps inner 6
+gaps outer 6
+smart_gaps on
+
+# Border (hide when only one window on workspace)
+default_border pixel 1
+smart_borders on
+
+# Colors                 border    bground    text      indicator  child_border
+client.focused           #EFD24D   #EFD24D    #000000   #EFD24D    #EFD24D
+client.focused_inactive  #374d70   #374d70    #FFFFFF   #374d70    #374d70
+client.unfocused         #374d70   #374d70    #FFFFFF   #374d70    #374d70
+
+# SwayFX
+corner_radius 6
+blur enable
+blur_passes 3
+blur_radius 2
+
+########################
+### INPUT
+########################
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+# focus_follows_mouse: "no" matches Hyprland follow_mouse=0
+focus_follows_mouse no
+
+########################
+### KEYBINDINGS
+########################
+
+# Apps
+bindsym $mod+Return exec $term
+bindsym $mod+e exec $file_explorer
+bindsym $mod+b exec $browser
+bindsym $mod+d exec rofi -modes "drun,games,calc" -show drun -show-icons
+bindsym $mod+Shift+d exec rofi -show calc
+bindsym $mod+Shift+r exec swaymsg reload
+
+# Lock on lid close (swaylock replaces hyprlock)
+bindswitch --locked lid:on exec swaylock -f
+
+# Kill window
+bindsym $mod+q kill
+
+# Reload config
+bindsym $mod+Shift+c reload
+
+# Exit Sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit Sway?' -B 'Yes' 'swaymsg exit'
+
+# Screenshots
+bindsym Print exec grimshot copy area
+bindsym $mod+Print exec grimshot copy active
+
+# Lock screen
+bindsym $mod+Shift+Ctrl+l exec swaylock -f
+
+########################
+### WINDOW FOCUS
+########################
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+########################
+### MOVE WINDOWS
+########################
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+########################
+### WORKSPACES
+########################
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Scratchpad
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+
+########################
+### LAYOUT / FLOATING
+########################
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# Move/resize windows with $mod + mouse
+floating_modifier $mod normal
+
+########################
+### RESIZE
+########################
+
+bindsym $mod+Ctrl+$left  resize shrink width  60 px
+bindsym $mod+Ctrl+$right resize grow   width  60 px
+bindsym $mod+Ctrl+$up    resize shrink height 60 px
+bindsym $mod+Ctrl+$down  resize grow   height 60 px
+
+bindsym $mod+Ctrl+Left   resize shrink width  60 px
+bindsym $mod+Ctrl+Right  resize grow   width  60 px
+bindsym $mod+Ctrl+Up     resize shrink height 60 px
+bindsym $mod+Ctrl+Down   resize grow   height 60 px
+
+########################
+### MEDIA KEYS
+########################
+
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec playerctl previous
+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
