@@ -20,7 +20,7 @@ set $browser firefox
 # Top header bar
 exec waybar
 # Wallpaper
-exec swaybg -i /home/noahsakko/.dotfiles/wallpapers/house-in-the-snow.png -m fill
+exec swww-daemon
 # Clipboard manager
 exec copyq --start-server
 # Keyring daemon
