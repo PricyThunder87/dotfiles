@@ -33,8 +33,8 @@ vim.keymap.set("n", "<M-O>", "O<Esc>")
 -- Alt+k/j to move line or visual selection up/down
 vim.keymap.set("n", "<M-k>", "<cmd>m .-2<CR>==")
 vim.keymap.set("n", "<M-j>", "<cmd>m .+1<CR>==")
-vim.keymap.set("v", "<M-k>", "<cmd><C-U>execute \"'<,'>move '<-2\"<CR>gv")
-vim.keymap.set("v", "<M-j>", "<cmd><C-U>execute \"'<,'>move '>+1\"<CR>gv")
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { silent = true })
 
 -- H / L: beginning / end of line
 vim.keymap.set({ "n", "v" }, "H", "^")
