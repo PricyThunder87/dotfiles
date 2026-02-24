@@ -5,6 +5,8 @@ if status is-interactive
     # Enable Vi bindings
     set -g fish_key_bindings fish_vi_key_bindings
     bind --mode insert j,k 'set fish_bind_mode default; commandline -f repaint'
+    bind H beginning-of-line
+    bind L end-of-line
 
     # Remove greeting message
     function fish_greeting
