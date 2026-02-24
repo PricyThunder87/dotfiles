@@ -127,14 +127,9 @@ if status is-interactive
     complete --erase --command zi
     alias zi=__zoxide_zi
 
-    # =============================================================================
-    #
-    # To initialize zoxide, add this to your configuration (usually
-    # ~/.config/fish/config.fish):
-    #
-    #   zoxide init fish | source
+    zoxide init fish --cmd=cd | source
+
     # Aliases
-    alias cd "z"
     alias gittree "git ls-files | tree --fromfile -a"
     alias su "su -m"
     alias cat bat
