@@ -1,45 +1,44 @@
 /* Baseline values for all elements */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "NotoSans Nerd Font", monospace;
-    font-size: 13px;
+  font-family: "JetBrainsMono Nerd Font", "NotoSans Nerd Font", monospace;
+  font-size: 13px;
 }
 
 /* Values for the bar itself — one continuous bar */
 #waybar {
-    background-color: rgb(40, 40, 40);
-    color: #ebdbb2;
-    font-weight: 500;
-    border-radius: 0;
-    border-bottom: 2px solid #3c3836;
+  background-color: rgb(40, 40, 40);
+  color: #ebdbb2;
+  font-weight: 500;
+  border-radius: 0;
+  border-bottom: 2px solid #3c3836;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-    background-color: rgba(26, 27, 38, 0.75);
-    margin: 0;
-    padding: 0 4px;
+  margin: 0;
+  padding: 0 4px;
 }
 
 /* Button effects for workspaces module */
 #workspaces button {
-    color: #a89984;
-    background: transparent;
-    margin: 4px;
-    transition: all 0.2s ease-in-out;
-    border: none;
-    outline: none;
+  color: #a89984;
+  background: transparent;
+  margin: 4px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
 }
 
 #workspaces button.active {
-    color: #fabd2f;
-    background-color: rgba(250, 189, 47, 0.12);
+  color: #fabd2f;
+  background-color: rgba(250, 189, 47, 0.12);
 }
 
 #workspaces button:hover {
-    background: #3c3836;
-    color: #ebdbb2;
+  background: #3c3836;
+  color: #ebdbb2;
 }
 
 #cpu,
@@ -55,9 +54,9 @@
 #backlight,
 #battery,
 #custom-power {
-    padding: 0 10px;
-    transition: 0.1s ease-in-out;
-    border: none;
+  padding: 0 10px;
+  transition: 0.1s ease-in-out;
+  border: none;
 }
 
 #cpu:hover,
@@ -73,19 +72,19 @@
 #backlight:hover,
 #battery:hover,
 #custom-power:hover {
-    background-color: rgba(60, 56, 54, 0.8);
+  background-color: rgba(60, 56, 54, 0.8);
 }
 
 /* Text colours */
 #cpu,
 #memory,
 #disk {
-    color: #d3869b;
+  color: #d3869b;
 }
 
 #clock {
-    color: #fabd2f;
-    font-weight: 500;
+  color: #fabd2f;
+  font-weight: 500;
 }
 
 #custom-vpn.active {
@@ -95,42 +94,42 @@
 #pulseaudio,
 #backlight,
 #network {
-    color: #ebdbb2;
+  color: #ebdbb2;
 }
 
 #network.disconnected,
 #custom-power,
 #battery.warning:not(.charging) {
-    color: #fb4934;
+  color: #fb4934;
 }
 
 #bluetooth {
-    color: #928374;
-    font-size: 16px;
+  color: #928374;
+  font-size: 16px;
 }
 
 #bluetooth.on {
-    color: #83a598;
+  color: #83a598;
 }
 
 #bluetooth.connected,
 #battery {
-    color: #8ec07c;
+  color: #8ec07c;
 }
 
 #battery.charging {
-    color: #b8bb26;
+  color: #b8bb26;
 }
 
 /* Tooltip styling */
 tooltip {
-    background-color: #1d2021;
-    color: #ebdbb2;
-    padding: 5px 12px;
-    margin: 5px 0;
-    border-radius: 6px;
-    border: 1px solid rgba(235, 219, 178, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    font-size: 12px;
+  background-color: #1d2021;
+  color: #ebdbb2;
+  padding: 5px 12px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid rgba(235, 219, 178, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-size: 12px;
 }
 
