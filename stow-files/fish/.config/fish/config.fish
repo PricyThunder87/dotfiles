@@ -155,6 +155,26 @@ if status is-interactive
 
     # Auto-start tmux
     if test -z "$TMUX"
-	tmux attach; or tmux new-session
+	if tmux has-session -t main 2>/dev/null
+	    # Find a window not currently viewed by any attached session
+	    set -l all_windows (tmux list-windows -t main -F '#{window_index}')
+	    set -l used_windows (tmux list-sessions -f '#{==:#{session_group},main}' -F '#{?session_attached,#{window_index},}' 2>/dev/null | string match -rv '^$')
+
+	    set -l free_window ""
+	    for w in $all_windows
+		if not contains $w $used_windows
+		    set free_window $w
+		    break
+		end
+	    end
+
+	    if test -n "$free_window"
+		exec tmux new-session -t main \; select-window -t "$free_window"
+	    else
+		exec tmux new-session -t main \; new-window
+	    end
+	else
+	    exec tmux new-session -s main
+	end
     end
 end
