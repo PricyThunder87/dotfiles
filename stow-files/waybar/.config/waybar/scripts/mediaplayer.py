@@ -105,7 +105,7 @@ class PlayerManager:
         current_player = self.get_first_playing_player()
         if current_player is not None:
             self.on_metadata_changed(current_player, current_player.props.metadata)
-        else:    
+        else:
             self.clear_output()
 
     def on_metadata_changed(self, player, metadata, _=None):
@@ -115,6 +115,8 @@ class PlayerManager:
         artist = artist.replace("&", "&amp;")
         title = player.get_title()
         title = title.replace("&", "&amp;")
+        if len(title) > 35:
+            title = title[:32].strip() + "..."
 
         track_info = ""
         if player_name == "spotify" and "mpris:trackid" in metadata.keys() and ":ad:" in player.props.metadata["mpris:trackid"]:
