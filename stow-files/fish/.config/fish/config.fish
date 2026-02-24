@@ -133,6 +133,7 @@ if status is-interactive
     #   zoxide init fish | source
     # Aliases
     alias cd "z"
+    alias gittree "git ls-files | tree --fromfile -a"
     alias su "su -m"
     alias cat bat
     alias ga "git add"
