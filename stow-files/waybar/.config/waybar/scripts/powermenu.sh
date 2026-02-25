@@ -20,7 +20,7 @@ choice=$(power_menu | rofi -dmenu \
 
 case "$choice" in
   *Lock)
-    hyprlock
+    swaylock
     ;;
   *Sleep)
     systemctl suspend
@@ -33,7 +33,7 @@ case "$choice" in
     ;;
   *Logout)
     if [ "$(confirm 'Log out?')" = "Yes" ]; then
-      hyprctl dispatch exit
+      swaymsg dispatch exit
     fi
     ;;
 esac
