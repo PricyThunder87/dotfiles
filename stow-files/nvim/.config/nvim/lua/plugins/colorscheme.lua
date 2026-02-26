@@ -4,6 +4,9 @@ return {
     config = function()
 	require("gruvbox").setup({
 	    variant = "medium",
+	    enable = {
+		lualine = false
+	    }
 	})
 	vim.cmd.colorscheme "gruvbox"
     end,
