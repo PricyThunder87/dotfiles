@@ -80,7 +80,7 @@ focus_follows_mouse no
 bindsym $mod+Return exec $term
 bindsym $mod+e exec $file_explorer
 bindsym $mod+b exec $browser
-bindsym $mod+d exec rofi -modes "drun,games,calc" -show drun -show-icons
+bindsym $mod+d exec rofi -show drun -show-icons
 bindsym $mod+Shift+d exec rofi -show calc
 bindsym $mod+Shift+r exec swaymsg reload
 
