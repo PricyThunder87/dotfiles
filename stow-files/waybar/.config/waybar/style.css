@@ -56,6 +56,9 @@
 #custom-power {
     padding: 0 10px;
     border: none;
+    border-radius: 0;
+    transition: background-color 0.2s ease-in-out;
+    transition: border-radius 0.3s ease-in-out;
 }
 
 #cpu:hover,
@@ -72,6 +75,8 @@
 #battery:hover,
 #custom-power:hover {
     font-weight: bold;
+    border-radius: 2px;
+    background-color: #3c3836;
 }
 
 /* Text colours */
