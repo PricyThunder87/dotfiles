@@ -44,6 +44,9 @@ vim.keymap.set({ "n", "v" }, "L", "$")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- Remove search highlighting with Escape
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { silent = true })
+
 -- Helper to feed keys safely in Lua
 local function feed(keys)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(keys, true, false, true), 'n', true)
