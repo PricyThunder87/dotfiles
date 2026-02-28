@@ -1,181 +1,280 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-[](color_orange)\
-$os\
-$username\
-[](bg:color_yellow fg:color_orange)\
-$directory\
-[](fg:color_yellow bg:color_aqua)\
-$git_branch\
-$git_status\
-[](fg:color_aqua bg:color_blue)\
-$c\
-$cpp\
-$rust\
-$golang\
-$nodejs\
-$php\
-$java\
-$kotlin\
-$haskell\
-$python\
-[](fg:color_blue bg:color_bg3)\
-$docker_context\
-$conda\
-$pixi\
-[](fg:color_bg3 bg:color_bg1)\
-$time\
-[ ](fg:color_bg1)\
-$line_break$character"""
+# --- Palette Definition ---
+# This makes it easy to change shades (Dark vs Light) later
+[palettes.gruvbox]
+bg0 = '#282828'
+red = '#fb4934'
+green = '#b8bb26'
+yellow = '#fabd2f'
+blue = '#83a598'
+purple = '#d3869b'
+aqua = '#8ec07c'
+orange = '#fe8019'
+gray = '#928374'
 
-palette = 'gruvbox_dark'
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+[aws]
+symbol = " "
+style = "orange"
 
-[os]
-disabled = false
-style = "bg:color_orange fg:color_fg0"
+[buf]
+symbol = " "
+style = "aqua"
 
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-AOSC = ""
-Arch = "󰣇"
-Artix = "󰣇"
-EndeavourOS = ""
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-Pop = ""
-
-[username]
-show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
-
-[directory]
-style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
-[git_branch]
-symbol = ""
-style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
-
-[git_status]
-style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+[bun]
+symbol = " "
+style = "red"
 
 [c]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "blue"
 
 [cpp]
 symbol = " "
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+style = "blue"
 
-[rust]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[golang]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[php]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[java]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[kotlin]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[haskell]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[python]
-symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
-
-[docker_context]
-symbol = ""
-style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+[cmake]
+symbol = " "
+style = "gray"
 
 [conda]
-style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+symbol = " "
+style = "green"
+
+[crystal]
+symbol = " "
+style = "red"
+
+[dart]
+symbol = " "
+style = "blue"
+
+[deno]
+symbol = " "
+style = "green"
+
+[directory]
+read_only = " 󰌾"
+style = "bold blue"
+
+[docker_context]
+symbol = " "
+style = "blue"
+
+[elixir]
+symbol = " "
+style = "purple"
+
+[elm]
+symbol = " "
+style = "aqua"
+
+[fennel]
+symbol = " "
+style = "yellow"
+
+[fortran]
+symbol = " "
+style = "purple"
+
+[fossil_branch]
+symbol = " "
+style = "purple"
+
+[gcloud]
+symbol = " "
+style = "blue"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_commit]
+tag_symbol = '  '
+style = "orange"
+
+[golang]
+symbol = " "
+style = "aqua"
+
+[gradle]
+symbol = " "
+style = "blue"
+
+[guix_shell]
+symbol = " "
+style = "yellow"
+
+[haskell]
+symbol = " "
+style = "purple"
+
+[haxe]
+symbol = " "
+style = "orange"
+
+[hg_branch]
+symbol = " "
+style = "purple"
+
+[hostname]
+ssh_symbol = " "
+style = "bold orange"
+
+[java]
+symbol = " "
+style = "red"
+
+[julia]
+symbol = " "
+style = "purple"
+
+[kotlin]
+symbol = " "
+style = "purple"
+
+[lua]
+symbol = " "
+style = "blue"
+
+[memory_usage]
+symbol = "󰍛 "
+style = "bold purple"
+
+[meson]
+symbol = "󰔷 "
+style = "green"
+
+[nim]
+symbol = "󰆥 "
+style = "yellow"
+
+[nix_shell]
+symbol = " "
+style = "blue"
+
+[nodejs]
+symbol = " "
+style = "green"
+
+[ocaml]
+symbol = " "
+style = "orange"
+
+[os]
+disabled = false
+style = "gray"
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Ios = "󰀷 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
+
+[package]
+symbol = "󰏗 "
+style = "orange"
+
+[perl]
+symbol = " "
+style = "blue"
+
+[php]
+symbol = " "
+style = "purple"
+
+[pijul_channel]
+symbol = " "
+style = "purple"
 
 [pixi]
-style = "bg:color_bg3"
-format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
+symbol = "󰏗 "
+style = "yellow"
 
-[time]
-disabled = true
-time_format = "%R"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+[python]
+symbol = " "
+style = "yellow"
 
-[line_break]
-disabled = false
+[rlang]
+symbol = "󰟔 "
+style = "blue"
 
-[character]
-disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+[ruby]
+symbol = " "
+style = "red"
+
+[rust]
+symbol = "󱘗 "
+style = "orange"
+
+[scala]
+symbol = " "
+style = "red"
+
+[status]
+symbol = " "
+style = "red"
+
+[swift]
+symbol = " "
+style = "orange"
+
+[xmake]
+symbol = " "
+style = "yellow"
+
+[zig]
+symbol = " "
+style = "yellow"
+
+# Apply the palette
+palette = "gruvbox"
