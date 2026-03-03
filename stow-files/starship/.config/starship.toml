@@ -1,173 +1,160 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# --- Palette Definition ---
-# This makes it easy to change shades (Dark vs Light) later
-[palettes.gruvbox]
-bg0 = '#282828'
-red = '#fb4934'
-green = '#b8bb26'
-yellow = '#fabd2f'
-blue = '#83a598'
-purple = '#d3869b'
-aqua = '#8ec07c'
-orange = '#fe8019'
-gray = '#928374'
-
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+success_symbol = "[➜](bold #b8bb26)"
+error_symbol = "[➜](bold #fb4934)"
 
 [aws]
 symbol = " "
-style = "orange"
+style = "#fe8019"
 
 [buf]
 symbol = " "
-style = "aqua"
+style = "#8ec07c"
 
 [bun]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [c]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [cpp]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [cmake]
 symbol = " "
-style = "gray"
+style = "#928374"
 
 [conda]
 symbol = " "
-style = "green"
+style = "#b8bb26"
 
 [crystal]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [dart]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [deno]
 symbol = " "
-style = "green"
+style = "#b8bb26"
 
 [directory]
 read_only = " 󰌾"
-style = "bold blue"
+style = "bold #83a598"
 
 [docker_context]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [elixir]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [elm]
 symbol = " "
-style = "aqua"
+style = "#8ec07c"
 
 [fennel]
 symbol = " "
-style = "yellow"
+style = "#fabd2f"
 
 [fortran]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [fossil_branch]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [gcloud]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [git_branch]
 symbol = " "
-style = "bold purple"
+style = "bold #d3869b"
 
 [git_commit]
 tag_symbol = '  '
-style = "orange"
+style = "#fe8019"
 
 [golang]
 symbol = " "
-style = "aqua"
+style = "#8ec07c"
 
 [gradle]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [guix_shell]
 symbol = " "
-style = "yellow"
+style = "#fabd2f"
 
 [haskell]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [haxe]
 symbol = " "
-style = "orange"
+style = "#fe8019"
 
 [hg_branch]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [hostname]
 ssh_symbol = " "
-style = "bold orange"
+style = "bold #fe8019"
 
 [java]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [julia]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [kotlin]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [lua]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [memory_usage]
 symbol = "󰍛 "
-style = "bold purple"
+style = "bold #d3869b"
 
 [meson]
 symbol = "󰔷 "
-style = "green"
+style = "#b8bb26"
 
 [nim]
 symbol = "󰆥 "
-style = "yellow"
+style = "#fabd2f"
 
 [nix_shell]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [nodejs]
 symbol = " "
-style = "green"
+style = "#b8bb26"
 
 [ocaml]
 symbol = " "
-style = "orange"
+style = "#fe8019"
 
 [os]
 disabled = false
-style = "gray"
+style = "#928374"
 
 [os.symbols]
 Alpaquita = " "
@@ -208,10 +195,10 @@ openSUSE = " "
 OracleLinux = "󰌷 "
 Pop = " "
 Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
+#fb4934 = " "
+#fb4934 = " "
 RockyLinux = " "
-Redox = "󰀘 "
+#fb4934 = "󰀘 "
 Solus = "󰠳 "
 SUSE = " "
 Ubuntu = " "
@@ -222,59 +209,56 @@ Zorin = " "
 
 [package]
 symbol = "󰏗 "
-style = "orange"
+style = "#fe8019"
 
 [perl]
 symbol = " "
-style = "blue"
+style = "#83a598"
 
 [php]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [pijul_channel]
 symbol = " "
-style = "purple"
+style = "#d3869b"
 
 [pixi]
 symbol = "󰏗 "
-style = "yellow"
+style = "#fabd2f"
 
 [python]
 symbol = " "
-style = "yellow"
+style = "#fabd2f"
 
 [rlang]
 symbol = "󰟔 "
-style = "blue"
+style = "#83a598"
 
 [ruby]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [rust]
 symbol = "󱘗 "
-style = "orange"
+style = "#fe8019"
 
 [scala]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [status]
 symbol = " "
-style = "red"
+style = "#fb4934"
 
 [swift]
 symbol = " "
-style = "orange"
+style = "#fe8019"
 
 [xmake]
 symbol = " "
-style = "yellow"
+style = "#fabd2f"
 
 [zig]
 symbol = " "
-style = "yellow"
-
-# Apply the palette
-palette = "gruvbox"
+style = "#fabd2f"
