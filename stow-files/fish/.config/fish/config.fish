@@ -131,6 +131,7 @@ if status is-interactive
 
     # Aliases
     alias gittree "git ls-files | tree --fromfile -a"
+    alias nv "nvim"
     alias su "su -m"
     alias cat bat
     alias ga "git add"
