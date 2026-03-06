@@ -18,7 +18,8 @@ end)
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true })
 
--- Shortcuts to append semicolon/comma/brace to end of line
+-- Semicolon, brace, and newline shortcut
+-- Shortcuts to append semicolon/colon to end of line
 -- ;
 vim.keymap.set("n", "<C-;>", "A;<Esc>")
 vim.keymap.set("i", "<C-;>", "<Esc>A;")
@@ -43,6 +44,9 @@ vim.keymap.set({ "n", "v" }, "L", "$")
 -- Keep visual mode after indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+-- Remove search highlighting with Escape
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<cr>", { silent = true })
 
 -- Helper to feed keys safely in Lua
 local function feed(keys)
@@ -76,3 +80,4 @@ vim.keymap.set("i", "<S-CR>", function()
 end)
 
 vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "jj", "<ESC>")
