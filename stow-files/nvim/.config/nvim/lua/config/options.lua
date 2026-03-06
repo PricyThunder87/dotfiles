@@ -14,7 +14,7 @@ vim.opt.clipboard:append("unnamedplus")
 vim.g.autoformat = false
 vim.b.autoformat = false -- buffer-local
 
--- Make lines wrap and break at convenient points
+-- Improve line wrapping
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
