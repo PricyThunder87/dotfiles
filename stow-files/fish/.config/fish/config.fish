@@ -36,15 +36,19 @@ if status is-interactive
 
 	set input $argv[1]
 	set output (string replace -r '\.md$' '.pdf' $input)
+	set tmphtml (mktemp -t "mdpdf.XXXXXX.html")
 
-	pandoc $input -o $output \
-	    --pdf-engine=wkhtmltopdf \
-	    --css ~/Documents/github-markdown.css \
-	    --css ~/Documents/table.css \
-	    --self-contained \
-	    -V margin-left=20mm \
-	    -V margin-right=20mm
+	pandoc $input \
+	    -f markdown+lists_without_preceding_blankline \
+	    -o $tmphtml \
+	    --standalone \
+	    --embed-resources \
+	    --css ~/.dotfiles/github-markdown.css \
+	    --template ~/.dotfiles/github-markdown.html
 
+	weasyprint $tmphtml $output
+
+	rm -f $tmphtml
 	echo "Created $output"
     end
 
