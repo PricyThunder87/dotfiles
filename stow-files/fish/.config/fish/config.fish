@@ -44,7 +44,8 @@ if status is-interactive
 	    --standalone \
 	    --embed-resources \
 	    --css ~/.dotfiles/github-markdown.css \
-	    --template ~/.dotfiles/github-markdown.html
+	    --template ~/.dotfiles/github-markdown.html \
+	    --lua-filter ~/.dotfiles/mermaid.lua
 
 	weasyprint $tmphtml $output
 
