@@ -28,6 +28,26 @@ if status is-interactive
 	rm -f -- "$tmp"
     end
 
+    function mdpdf
+	if test (count $argv) -eq 0
+	    echo "Usage: mdpdf <input.md>"
+	    return 1
+	end
+
+	set input $argv[1]
+	set output (string replace -r '\.md$' '.pdf' $input)
+
+	pandoc $input -o $output \
+	    --pdf-engine=wkhtmltopdf \
+	    --css ~/Documents/github-markdown.css \
+	    --css ~/Documents/table.css \
+	    --self-contained \
+	    -V margin-left=20mm \
+	    -V margin-right=20mm
+
+	echo "Created $output"
+    end
+
     # =============================================================================
     #
     # Utility functions for zoxide.
