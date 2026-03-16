@@ -4,6 +4,7 @@ if status is-interactive
 
     # Enable Vi bindings
     set -g fish_key_bindings fish_vi_key_bindings
+    bind --mode insert j,j 'set fish_bind_mode default; commandline -f repaint'
     bind --mode insert j,k 'set fish_bind_mode default; commandline -f repaint'
     bind H beginning-of-line
     bind L end-of-line
@@ -25,6 +26,31 @@ if status is-interactive
 	    builtin cd -- "$cwd"
 	end
 	rm -f -- "$tmp"
+    end
+
+    function mdpdf
+	if test (count $argv) -eq 0
+	    echo "Usage: mdpdf <input.md>"
+	    return 1
+	end
+
+	set input $argv[1]
+	set output (string replace -r '\.md$' '.pdf' $input)
+	set tmphtml (mktemp -t "mdpdf.XXXXXX.html")
+
+	pandoc $input \
+	    -f markdown+lists_without_preceding_blankline \
+	    -o $tmphtml \
+	    --standalone \
+	    --embed-resources \
+	    --css ~/.dotfiles/github-markdown.css \
+	    --template ~/.dotfiles/github-markdown.html \
+	    --lua-filter ~/.dotfiles/mermaid.lua
+
+	weasyprint $tmphtml $output
+
+	rm -f $tmphtml
+	echo "Created $output"
     end
 
     # =============================================================================
