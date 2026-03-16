@@ -28,6 +28,9 @@ if status is-interactive
 	rm -f -- "$tmp"
     end
 
+    # Render markdown to PDF using pandoc and weasyprint. Supports mermaid.js.
+    # Dependencies: pandoc, weasyprint (via python), mermaid-cli (via npm),
+    #   chrome-headless-shell (npx puppeteer@23.11.1 browsers install chrome-headless-shell)
     function mdpdf
 	if test (count $argv) -eq 0
 	    echo "Usage: mdpdf <input.md>"
