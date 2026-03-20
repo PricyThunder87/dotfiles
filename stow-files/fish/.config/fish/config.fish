@@ -207,4 +207,6 @@ if status is-interactive
 	    exec tmux new-session -s main
 	end
     end
+
+    export MUSIC_HUB_CONNECTION_STRING="Host=localhost;Port=5432;Database=musichub;Username=musichub_user;Password=password"
 end
