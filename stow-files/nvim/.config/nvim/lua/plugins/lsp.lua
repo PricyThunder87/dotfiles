@@ -3,6 +3,13 @@ return {
     dependencies = {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
+	{
+	    "seblyng/roslyn.nvim",
+	    commit = "82d0c9724c3f8eab7342a3a136782b4788070bd0",
+	    ---@module 'roslyn.config'
+	    ---@type RoslynNvimConfig
+	    ft = { "cs", "razor" }
+	}
     },
     config = function()
 	-- Add Roslyn registry to mason
@@ -26,6 +33,16 @@ return {
 			    "vim", "opts"
 			}
 		    }
+		}
+	    }
+	})
+
+	vim.lsp.config("roslyn", {
+	    filetypes = { "cs", "cshtml", "razor" },
+	    settings = {
+		["csharp|background_analysis"] = {
+		    dotnet_analyzer_diagnostics_scope = "none",
+		    dotnet_compiler_diagnostics_scope = "openFiles",
 		}
 	    }
 	})
