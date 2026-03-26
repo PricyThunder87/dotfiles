@@ -6,11 +6,16 @@ vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("i", "jj", "<ESC>")
 
--- Open lazy
+-- Open Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>")
 
 -- Telescope
 vim.keymap.set("n", "<leader>t", "<cmd>Telescope<cr>")
+
+-- Jump to config
+vim.keymap.set('n', '<leader>fc', function()
+    require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
+end)
 
 -- LSP code actions
 vim.keymap.set({"n", "x"}, "<leader>a", "<cmd>lua require('fastaction').code_action()<cr>")
