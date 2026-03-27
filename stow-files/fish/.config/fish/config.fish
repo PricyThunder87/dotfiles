@@ -167,6 +167,7 @@ if status is-interactive
     alias gc "git commit"
     alias gcm "git commit -m"
     alias gp "git push"
+    alias c "clear"
 
     # Line counter (ignores empty lines and comments)
     function countlines
