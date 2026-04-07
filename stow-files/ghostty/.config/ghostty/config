@@ -9,6 +9,9 @@ clipboard-paste-protection = false
 clipboard-read = allow
 clipboard-write = allow
 
+# Notifications
+app-notifications = no-clipboard-copy
+
 # Gruvbox Dark (matching waybar)
 background = #282828
 foreground = #ebdbb2
