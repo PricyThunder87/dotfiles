@@ -20,7 +20,7 @@ set $browser firefox
 # Top header bar
 exec waybar
 # Wallpaper
-exec swww-daemon
+exec awww-daemon
 # Clipboard manager
 exec copyq --start-server
 # Keyring daemon
