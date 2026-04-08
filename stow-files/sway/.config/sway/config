@@ -20,7 +20,7 @@ set $browser firefox
 # Top header bar
 exec waybar
 # Wallpaper
-exec swww-daemon
+exec awww-daemon
 # Clipboard manager
 exec copyq --start-server
 # Keyring daemon
@@ -49,10 +49,10 @@ client.focused_inactive  #374d70   #374d70    #FFFFFF   #374d70    #374d70
 client.unfocused         #374d70   #374d70    #FFFFFF   #374d70    #374d70
 
 # SwayFX
-corner_radius 6
-blur enable
-blur_passes 3
-blur_radius 2
+# corner_radius 6
+# blur enable
+# blur_passes 3
+# blur_radius 2
 
 ########################
 ### INPUT
@@ -77,7 +77,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+e exec $file_explorer
 bindsym $mod+b exec $browser
 bindsym $mod+d exec rofi -show drun -show-icons
-bindsym $mod+Shift+d exec rofi -show calc
 bindsym $mod+Shift+r exec swaymsg reload
 
 # Lock on lid close (swaylock replaces hyprlock)

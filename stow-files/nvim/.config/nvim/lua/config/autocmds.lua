@@ -20,6 +20,15 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     end,
 })
 
+-- Use Telescope for LSP actions
+vim.api.nvim_create_autocmd({"LspAttach"}, {
+    callback = function(args)
+	local opts = { buffer = args.buf }
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
+	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, vim.tbl_extend("force", opts, { desc = "Go to references"}))
+    end
+})
+
 -- Delete all trailing whitespaces in a file if it's not binary nor a diff
 -- This is called in the InsertLeave block above
 function _G.trim_trailing_whitespaces()

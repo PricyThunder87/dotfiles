@@ -2,7 +2,7 @@ return {
     'nvim-telescope/telescope.nvim', version = '*',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        -- optional but recommended
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+	{ "Slotos/telescope-lsp-handlers.nvim", config = function() require("telescope-lsp-handlers").setup() end }
     }
 }

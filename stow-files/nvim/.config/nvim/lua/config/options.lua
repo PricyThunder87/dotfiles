@@ -1,3 +1,5 @@
+require("vim._core.ui2").enable()
+
 vim.opt.shiftwidth = 4
 
 vim.opt.number = true
