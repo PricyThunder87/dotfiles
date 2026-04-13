@@ -25,6 +25,7 @@ exec awww-daemon
 exec copyq --start-server
 # Keyring daemon
 exec gnome-keyring-daemon --start --components=secrets
+exec /usr/lib/gcr-ssh-agent
 # Idle/lock manager
 exec swayidle -w before-sleep 'swaylock -f'
 # Set cursor theme
