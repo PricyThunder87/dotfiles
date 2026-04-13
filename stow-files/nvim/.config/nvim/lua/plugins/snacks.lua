@@ -30,7 +30,11 @@ return {
 	explorer = { enabled = true, },
 	indent = { enabled = false },
 	input = { enabled = true },
-	picker = { enabled = true },
+	picker =
+	{
+	    enabled = true,
+	    sources = { explorer = { win = { list = { wo = { number = true, relativenumber = true } } } } }
+	},
 	notifier = { enabled = false },
 	quickfile = { enabled = true },
 	scope = { enabled = true },
