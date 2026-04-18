@@ -1,4 +1,5 @@
 {
+    "height": 45,
     "include": [
         "./modules.jsonc"
     ],
