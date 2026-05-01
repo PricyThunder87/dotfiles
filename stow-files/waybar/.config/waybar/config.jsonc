@@ -10,6 +10,8 @@
     "spacing": 0,
     "modules-left": [
         "ext/workspaces",
+	"sway/workspaces",
+        "hypr/workspaces",
         "cpu",
         "memory",
         "disk"
