@@ -1,9 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-[character]
-success_symbol = "[➜](bold #b8bb26)"
-error_symbol = "[➜](bold #fb4934)"
-
 [aws]
 symbol = " "
 style = "#fe8019"
