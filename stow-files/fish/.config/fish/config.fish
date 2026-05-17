@@ -161,6 +161,7 @@ if status is-interactive
     # Aliases
     alias gittree "git ls-files | tree --fromfile -a"
     alias cp "cp -v"
+    alias oc "opencode ./"
     alias nv "nvim"
     alias su "su -m"
     alias cat bat
