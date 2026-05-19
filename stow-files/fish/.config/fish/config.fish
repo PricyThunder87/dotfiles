@@ -18,6 +18,9 @@ if status is-interactive
     ssh-add ~/.ssh/personal-github-key >/dev/null 2>&1
     ssh-add ~/.ssh/school-gitlab-key >/dev/null 2>&1
 
+    # Add .NET tools to path
+    fish_add_path /home/noahsakko/.dotnet/tools
+
     # Yazi alias
     function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
