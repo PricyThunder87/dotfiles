@@ -2,8 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
 	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"seblyng/roslyn.nvim",
+	"williamboman/mason-lspconfig.nvim"
     },
     config = function()
 	-- Add Roslyn registry to mason
