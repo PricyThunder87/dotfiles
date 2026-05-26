@@ -11,7 +11,7 @@ confirm() {
     -lines 2
 }
 
-choice=$(power_menu | rofi -dmenu \
+choice=$(power_menu | rofi -dmenu -font "IoskeleyMono Nerd Font 12" \
   -p "Power" \
   -no-custom \
   -lines 5 \
