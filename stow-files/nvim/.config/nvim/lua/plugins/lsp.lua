@@ -12,10 +12,10 @@ return {
 		"github:Crashdummyy/mason-registry",
 	    }
 	})
+
 	require("mason-lspconfig").setup({
 	    ensure_installed = {
 		"lua_ls",
-		"roslyn",
 		"html-lsp"
 	    }
 	})
@@ -25,20 +25,9 @@ return {
 		Lua = {
 		    diagnostics = {
 			globals = {
-			    "vim", "opts"
+			    "vim"
 			}
 		    }
-		}
-	    }
-	})
-
-	vim.lsp.enable("roslyn_ls")
-	vim.lsp.config("roslyn_ls", {
-	    filetypes = { "cs", "cshtml", "razor" },
-	    settings = {
-		["csharp|background_analysis"] = {
-		    dotnet_analyzer_diagnostics_scope = "fullSolution",
-		    dotnet_compiler_diagnostics_scope = "openFiles",
 		}
 	    }
 	})
