@@ -18,6 +18,9 @@ if status is-interactive
     ssh-add ~/.ssh/personal-github-key >/dev/null 2>&1
     ssh-add ~/.ssh/school-gitlab-key >/dev/null 2>&1
 
+    # Add .NET tools to path
+    fish_add_path /home/noahsakko/.dotnet/tools
+
     # Yazi alias
     function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -30,7 +33,7 @@ if status is-interactive
 
     # Render markdown to PDF using pandoc and weasyprint. Supports mermaid.js.
     # Dependencies: pandoc, weasyprint (via python), mermaid-cli (via npm),
-    #   chrome-headless-shell (npx puppeteer@23.11.1 browsers install chrome-headless-shell)
+    #   chrome-headless-shell (npx puppeteer browsers install chrome-headless-shell)
     function mdpdf
 	if test (count $argv) -eq 0
 	    echo "Usage: mdpdf <input.md>"
@@ -161,6 +164,7 @@ if status is-interactive
     # Aliases
     alias gittree "git ls-files | tree --fromfile -a"
     alias cp "cp -v"
+    alias oc "opencode ./"
     alias nv "nvim"
     alias su "su -m"
     alias cat bat
