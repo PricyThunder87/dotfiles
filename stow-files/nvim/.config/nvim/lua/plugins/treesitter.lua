@@ -8,6 +8,9 @@ return {
 	highlight = { enable = true },
     },
     init = function()
+	-- Cargo is used to install the tree sitter CLI
+	vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.expand("$HOME/.cargo/bin")
+
 	vim.filetype.add({
 	    extension = {
 		razor = "razor",
