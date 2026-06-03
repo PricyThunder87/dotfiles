@@ -5,6 +5,8 @@ return {
 	"williamboman/mason-lspconfig.nvim"
     },
     config = function()
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+
 	-- Add Roslyn registry to mason
 	require("mason").setup({
 	    registries = {
