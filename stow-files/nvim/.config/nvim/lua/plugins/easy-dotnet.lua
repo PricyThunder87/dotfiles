@@ -14,6 +14,14 @@ return {
 		suggest_updates = true, -- Periodically suggest roslyn-language-server updates
 		analyzer_assemblies = {}, -- Any additional roslyn analyzers you might use like SonarAnalyzer.CSharp
 		config = {},
+		razor = {
+		    enabled = true,
+		    html = {
+			enabled = true,
+			cmd = nil, -- Auto-detect project node_modules/.bin/vscode-html-language-server, then PATH
+			request_timeout = 5000,
+		    },
+		},
 	    },
 	    auto_bootstrap_namespace = {
 		--block_scoped, file_scoped
@@ -29,6 +37,9 @@ return {
 		log_level = nil,
 	    },
 	    picker = "telescope",
+	    notifications = {
+		handler = false
+	    }
 	})
 
 	vim.keymap.set("n", "<leader>rp", function()
