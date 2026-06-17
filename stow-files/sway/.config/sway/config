@@ -17,6 +17,8 @@ set $browser firefox
 ### AUTOSTART
 ########################
 
+# Start xdg-desktop-portal
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway DISPLAY && sleep 1 && systemctl --user start xdg-desktop-portal-gtk xdg-desktop-portal
 # Top header bar
 exec waybar
 # Wallpaper
