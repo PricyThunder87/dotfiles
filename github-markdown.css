@@ -1177,14 +1177,10 @@
 }
 
 .markdown-body ul,
-.markdown-body ol {
-  break-inside: avoid;
-  page-break-inside: avoid;
-}
-
+.markdown-body ol,
 .markdown-body li {
-  break-inside: avoid;
-  page-break-inside: avoid;
+  break-inside: auto;
+  page-break-inside: auto;
 }
 
 /* Mermaid diagram styling */
