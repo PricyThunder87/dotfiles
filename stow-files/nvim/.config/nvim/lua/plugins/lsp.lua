@@ -41,5 +41,7 @@ return {
 	    },
 	    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 	})
+
+	vim.lsp.enable("jdtls")
     end
 }

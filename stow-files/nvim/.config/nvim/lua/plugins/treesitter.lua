@@ -18,8 +18,11 @@ return {
 	    }
 	})
 	vim.treesitter.language.register('razor', 'razor')
+
+	local ts_fix_group = vim.api.nvim_create_augroup("TSLanguageFix", { clear = true })
 	vim.api.nvim_create_autocmd("FileType", {
-	    pattern = "razor",
+	    pattern = { "razor", "java" }, -- Add java here to force the engine start
+	    group = ts_fix_group,
 	    callback = function()
 		vim.treesitter.start()
 	    end
