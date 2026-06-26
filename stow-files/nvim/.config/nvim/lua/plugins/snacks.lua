@@ -3,7 +3,7 @@ return {
     priority = 1000,
     lazy = false,
     keys = {
-	{ "<leader>e", function() Snacks.explorer.open() end, desc = "Explorer" },
+	-- { "<leader>e", function() Snacks.explorer.open() end, desc = "Explorer" },
 	{ "<leader>h", function() Snacks.terminal.toggle() end, desc = "Terminal" },
     },
     ---@type snacks.Config
@@ -27,7 +27,7 @@ return {
 		{ section = "keys", gap = 1 }
 	    }
 	},
-	explorer = { enabled = true, },
+	explorer = { enabled = false, },
 	indent = { enabled = false },
 	input = { enabled = true },
 	picker =
