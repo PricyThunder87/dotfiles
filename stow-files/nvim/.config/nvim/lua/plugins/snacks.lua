@@ -3,7 +3,6 @@ return {
     priority = 1000,
     lazy = false,
     keys = {
-	-- { "<leader>e", function() Snacks.explorer.open() end, desc = "Explorer" },
 	{ "<leader>h", function() Snacks.terminal.toggle() end, desc = "Terminal" },
     },
     ---@type snacks.Config

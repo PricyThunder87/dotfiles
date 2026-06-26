@@ -4,6 +4,14 @@ return {
     config = function()
 	require("mini.ai").setup()
 	require("mini.align").setup()
+	require("mini.files").setup({
+	    windows = {
+		max_number = 3,
+		preview = true,
+		width_preview = 75
+	    }
+	})
+	vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>")
 	require("mini.pairs").setup()
 	require("mini.splitjoin").setup()
 	require("mini.surround").setup()
