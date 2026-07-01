@@ -1,4 +1,4 @@
-h1.config({
+hl.config({
     general = {
 	gaps_in = 8,
 	gaps_out = 8,
