@@ -35,28 +35,28 @@ hl.bind("SUPER+Print", hl.dsp.exec_cmd("grimshot copy active"), { description = 
 hl.bind("SUPER+SHIFT+CTRL+L", hl.dsp.exec_cmd("swaylock -f"), { description = "Lock screen" })
 
 -- Window focus (vim keys)
-hl.bind("SUPER+H", hl.dsp.focus({direction = "left"  }),  { description = "Focus left" })
-hl.bind("SUPER+J", hl.dsp.focus({direction = "down"  }),  { description = "Focus down" })
+hl.bind("SUPER+H", hl.dsp.focus({direction = "left"  }),    { description = "Focus left" })
+hl.bind("SUPER+J", hl.dsp.focus({direction = "down"  }),    { description = "Focus down" })
 hl.bind("SUPER+K", hl.dsp.focus({direction = "up"    }),    { description = "Focus up" })
-hl.bind("SUPER+L", hl.dsp.focus({direction = "right" }), { description = "Focus right" })
+hl.bind("SUPER+L", hl.dsp.focus({direction = "right" }),    { description = "Focus right" })
 
 -- Window focus (arrow keys)
-hl.bind("SUPER+Left",  hl.dsp.focus(({direction = "left"  })), { description = "Focus left" })
-hl.bind("SUPER+Down",  hl.dsp.focus(({direction = "down"  })), { description = "Focus down" })
-hl.bind("SUPER+Up",    hl.dsp.focus(({direction = "up"    })), { description = "Focus up" })
-hl.bind("SUPER+Right", hl.dsp.focus(({direction = "right" })), { description = "Focus right" })
+hl.bind("SUPER+Left",  hl.dsp.focus({direction = "left"  }), { description = "Focus left" })
+hl.bind("SUPER+Down",  hl.dsp.focus({direction = "down"  }), { description = "Focus down" })
+hl.bind("SUPER+Up",    hl.dsp.focus({direction = "up"    }), { description = "Focus up" })
+hl.bind("SUPER+Right", hl.dsp.focus({direction = "right" }), { description = "Focus right" })
 
--- Move windows (vim keys)
-hl.bind("SUPER+SHIFT+H", hl.dsp.window.move(({direction = "left"  })), { description = "Move window left" })
-hl.bind("SUPER+SHIFT+J", hl.dsp.window.move(({direction = "down"  })), { description = "Move window down" })
-hl.bind("SUPER+SHIFT+K", hl.dsp.window.move(({direction = "up"    })), { description = "Move window up" })
-hl.bind("SUPER+SHIFT+L", hl.dsp.window.move(({direction = "right" })), { description = "Move window right" })
+-- Move windows (vim keys) - FIXED DIRECTIONS
+hl.bind("SUPER+SHIFT+H", hl.dsp.window.move({ direction = "l" }), { description = "Move window left" })
+hl.bind("SUPER+SHIFT+J", hl.dsp.window.move({ direction = "d" }), { description = "Move window down" })
+hl.bind("SUPER+SHIFT+K", hl.dsp.window.move({ direction = "u" }), { description = "Move window up" })
+hl.bind("SUPER+SHIFT+L", hl.dsp.window.move({ direction = "r" }), { description = "Move window right" })
 
 -- Move windows (arrow keys)
-hl.bind("SUPER+SHIFT+Left",  hl.dsp.window.move(({direction = "left"  })), { description = "Move window left" })
-hl.bind("SUPER+SHIFT+Down",  hl.dsp.window.move(({direction = "down"  })), { description = "Move window down" })
-hl.bind("SUPER+SHIFT+Up",    hl.dsp.window.move(({direction = "up"    })), { description = "Move window up" })
-hl.bind("SUPER+SHIFT+Right", hl.dsp.window.move(({direction = "right" })), { description = "Move window right" })
+hl.bind("SUPER+SHIFT+Left",  hl.dsp.window.move({direction = "l"  }), { description = "Move window left" })
+hl.bind("SUPER+SHIFT+Down",  hl.dsp.window.move({direction = "d"  }), { description = "Move window down" })
+hl.bind("SUPER+SHIFT+Up",    hl.dsp.window.move({direction = "u"    }), { description = "Move window up" })
+hl.bind("SUPER+SHIFT+Right", hl.dsp.window.move({direction = "r" }), { description = "Move window right" })
 
 -- Workspaces
 for i = 1, 10 do
@@ -73,18 +73,6 @@ hl.bind("SUPER+SHIFT+S", hl.dsp.exec_cmd("hyprctl dispatch movetoworkspace speci
 hl.bind("SUPER+F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
 hl.bind("SUPER+SHIFT+Space", hl.dsp.window.float(), { description = "Toggle floating" })
 hl.bind("SUPER+Space", hl.dsp.window.cycle_next(), { description = "Cycle windows" })
-
--- Resize with Ctrl + vim keys
-hl.bind("SUPER+SHIFT+H", hl.dsp.window.resize({ x = -60, y = 0 }),  { description = "Resize shrink width" })
-hl.bind("SUPER+SHIFT+J", hl.dsp.window.resize({ x = 0, y = 60 }),   { description = "Resize grow height" })
-hl.bind("SUPER+SHIFT+K", hl.dsp.window.resize({ x = 0, y = -60 }),  { description = "Resize shrink height" })
-hl.bind("SUPER+SHIFT+L", hl.dsp.window.resize({ x = 60, y = 0 }),   { description = "Resize grow width" })
-
--- Resize with Ctrl + arrow keys
-hl.bind("SUPER+SHIFT+Left",  hl.dsp.window.resize({ x = -60, y = 0 }), { description = "Resize shrink width" })
-hl.bind("SUPER+SHIFT+Down",  hl.dsp.window.resize({ x = 0, y = 60 }),  { description = "Resize grow height" })
-hl.bind("SUPER+SHIFT+Up",    hl.dsp.window.resize({ x = 0, y = -60 }), { description = "Resize shrink height" })
-hl.bind("SUPER+SHIFT+Right", hl.dsp.window.resize({ x = 60, y = 0 }),  { description = "Resize grow width" })
 
 -- Media keys
 hl.bind("XF86AudioMute",          hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"),       { locked = true, description = "Mute audio" })
