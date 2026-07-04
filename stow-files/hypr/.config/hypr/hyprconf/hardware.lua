@@ -11,3 +11,9 @@ hl.monitor({
     position="-1920x0",
     scale = 1
 })
+
+hl.config({
+    cursor = {
+	no_hardware_cursors = false
+    }
+})
