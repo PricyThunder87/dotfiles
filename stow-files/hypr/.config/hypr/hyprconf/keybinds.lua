@@ -40,6 +40,9 @@ hl.bind("SUPER+J", hl.dsp.focus({direction = "down"  }),    { description = "Foc
 hl.bind("SUPER+K", hl.dsp.focus({direction = "up"    }),    { description = "Focus up" })
 hl.bind("SUPER+L", hl.dsp.focus({direction = "right" }),    { description = "Focus right" })
 
+hl.bind("SUPER+mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind("SUPER+mouse:273", hl.dsp.window.resize(), { mouse = true })
+
 -- Window focus (arrow keys)
 hl.bind("SUPER+Left",  hl.dsp.focus({direction = "left"  }), { description = "Focus left" })
 hl.bind("SUPER+Down",  hl.dsp.focus({direction = "down"  }), { description = "Focus down" })
