@@ -20,6 +20,19 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     end,
 })
 
+-- Set shift width to 2 in HTML-adjacent filetypes
+local leet_indent = vim.api.nvim_create_augroup("LeetIndent", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = leet_indent,
+  pattern = { "typescriptreact", "javascriptreact", "html", "css", "json" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true -- Converts tabs to spaces
+  end,
+})
+
 -- Use Telescope for LSP actions
 vim.api.nvim_create_autocmd({"LspAttach"}, {
     callback = function(args)

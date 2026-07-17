@@ -5,8 +5,9 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.autoindent = true
-vim.opt.smartindent = true
+vim.cmd("filetype indent on")
+vim.opt.autoindent = false
+vim.opt.smartindent = false
 
 -- Always yank to clipboard
 vim.opt.clipboard:append("unnamedplus")
