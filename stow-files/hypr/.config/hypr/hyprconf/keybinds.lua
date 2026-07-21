@@ -70,7 +70,7 @@ end
 
 -- Scratchpad
 hl.bind("SUPER+S", hl.dsp.workspace.toggle_special("scratchpad"), { description = "Toggle scratchpad" })
-hl.bind("SUPER+SHIFT+S", hl.dsp.exec_cmd("hyprctl dispatch movetoworkspace special:scratchpad"), { description = "Move window to scratchpad" })
+hl.bind("SUPER+SHIFT+S", hl.dsp.window.move({ workspace = "special:scratchpad" }), { description = "Move window to scratchpad" } )
 
 -- Layout / floating
 hl.bind("SUPER+F", hl.dsp.window.fullscreen(), { description = "Toggle fullscreen" })
