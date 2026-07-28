@@ -23,6 +23,9 @@ vim.keymap.set({"n", "x"}, "<leader>ca", function()
     vim.lsp.buf.code_action({ apply = true })
 end)
 
+-- Paste over visual selection and retain paste buffer
+vim.keymap.set("x", "<leader>p", "\"_dP")
+
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true })
