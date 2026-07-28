@@ -45,11 +45,6 @@ vim.keymap.set("n", "<M-j>", "<cmd>m .+1<CR>==")
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { silent = true })
 
-
--- H / L: beginning / end of line
-vim.keymap.set({ "n", "v" }, "H", "^")
-vim.keymap.set({ "n", "v" }, "L", "$")
-
 -- Keep visual mode after indenting
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
