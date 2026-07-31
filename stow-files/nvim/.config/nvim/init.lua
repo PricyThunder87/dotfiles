@@ -40,3 +40,4 @@ vim.pack.add({
 
 require('plugins.lsp')
 require('plugins.mini')
+require('plugins.telescope')
