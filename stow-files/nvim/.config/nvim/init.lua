@@ -18,11 +18,15 @@ vim.pack.add({
     { src = 'https://github.com/brenoprata10/nvim-highlight-colors', name = 'nvim-highlight-colors' },
     { src = 'https://github.com/brenoprata10/nvim-highlight-colors', name = 'nvim-highlight-colors' },
 
+    -- Terminal
+    { src = 'https://github.com/MunifTanjim/nui.nvim', name = 'nui' },
+    { src = 'https://github.com/wr9dg17/essential-term.nvim', name = 'essential-term' },
+
     -- Telescope
     { src = 'https://github.com/nvim-lua/plenary.nvim', name = 'plenary' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim', name = 'telescope' },
-    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim', name = 'telescope-fzf-native', build = 'make' },
     { src = 'https://github.com/Slotos/telescope-lsp-handlers.nvim', name = 'telescope-lsp-handlers' },
+    { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim', name = 'telescope-fzf-native', build = 'make' },
 
     -- Language Specific
     -- C#
@@ -41,3 +45,4 @@ vim.pack.add({
 require('plugins.lsp')
 require('plugins.mini')
 require('plugins.telescope')
+require('plugins.essential-term')
