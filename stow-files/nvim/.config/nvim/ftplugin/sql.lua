@@ -1,0 +1,1 @@
+require('mssql.nvim').setup()

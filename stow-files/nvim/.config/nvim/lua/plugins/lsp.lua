@@ -1,47 +1,63 @@
-return {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim"
-    },
-    config = function()
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+require('mason').setup({
+    ui = {
+	icons = {
+	    package_installed = "✓",
+	    package_pending = "➜",
+	    package_uninstalled = "✗"
+	}
+    }
+})
 
-	-- Add Roslyn registry to mason
-	require("mason").setup({
-	    registries = {
-		"github:mason-org/mason-registry",
-		"github:Crashdummyy/mason-registry",
-	    }
-	})
+require('mason-lspconfig').setup({
+    ensure_installed = { "lua_ls" },
+    automatic_enable = true
+})
 
-	require("mason-lspconfig").setup({
-	    ensure_installed = {
-		"lua_ls",
-	    }
-	})
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+	local opts = { buffer = args.buf, remap = false }
+	local builtin = require('telescope.builtin')
 
-	vim.lsp.config("lua_ls", {
-	    settings = {
-		Lua = {
-		    diagnostics = {
-			globals = {
-			    "vim"
-			}
-		    }
-		}
-	    }
-	})
+	-- Telescope Pickers
+	vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
+	vim.keymap.set("n", "gr", builtin.lsp_references, opts)
+	vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
 
-	vim.lsp.config("clangd", {
-	    cmd = {
-		"clangd",
-		"--background-index",
-		"--clang-tidy"
+	-- Non-Picker LSP Utilities
+	vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+
+	-- Diagnostic Navigation
+	vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
+	vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
+    end,
+})
+
+vim.lsp.config('lua_ls', {
+    settings = {
+	Lua = {
+	    diagnostics = { globals = { "vim" } },
+	    workspace = {
+		library = {
+		    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+		    [vim.fn.stdpath("config") .. "/lua"] = true,
+		},
+		checkThirdParty = false,
 	    },
-	    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-	})
+	    telemetry = { enable = false },
+	},
+    },
+})
 
-	vim.lsp.enable("jdtls")
-    end
-}
+require('tiny-inline-diagnostic').setup({
+    preset = 'minimal',
+    show_source = {
+	enabled = true,
+	if_many = true,
+    },
+    multilines = { enabled = true },
+    show_all_diags_on_cursorline = true,
+    show_diags_only_under_cursor = true
+})
