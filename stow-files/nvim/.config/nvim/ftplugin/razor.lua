@@ -41,5 +41,17 @@ dotnet.setup {
 vim.keymap.set("n", "<leader>rp", function()
   dotnet.run_project()
 end, { desc = "Run .NET project" })
+require("nvim-treesitter").setup {
+  ensure_installed = { "c_sharp", "html" },
+  highlight = { enable = true },
+}
+
+vim.filetype.add {
+  extension = {
+    razor = "razor",
+    cshtml = "razor",
+  },
+}
+vim.treesitter.language.register("razor", "razor")
 
 vim.treesitter.start()

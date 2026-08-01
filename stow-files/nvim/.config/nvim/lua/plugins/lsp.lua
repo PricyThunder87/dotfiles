@@ -85,8 +85,16 @@ require("conform").setup {
     typescript = { "prettierd" },
     typescriptreact = { "prettierd" },
     html = { "prettierd" },
-    c_sharp = { "csharpier" },
+    cs = { "csharpier" },
     python = { "ruff" },
+    razor = { "razorstyle" },
+  },
+  formatters = {
+    razorstyle = {
+      command = "razorstyle",
+      args = { "fix", "$FILENAME" },
+      stdin = false,
+    },
   },
   format_on_save = {
     lsp_format = "fallback",
