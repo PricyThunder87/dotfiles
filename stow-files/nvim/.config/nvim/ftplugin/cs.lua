@@ -1,4 +1,4 @@
-local dotnet = require("easy-dotnet")
+local dotnet = require('easy-dotnet')
 dotnet.setup({
     lsp = {
 	enabled = true, -- Enable builtin roslyn lsp
@@ -21,15 +21,15 @@ dotnet.setup({
     },
     auto_bootstrap_namespace = {
 	--block_scoped, file_scoped
-	type = "file_scoped",
+	type = 'file_scoped',
 	enabled = true,
 	use_clipboard_json = {
-	    behavior = "prompt", --'auto' | 'prompt' | 'never',
-	    register = "+", -- which register to check
+	    behavior = 'prompt', --'auto' | 'prompt' | 'never',
+	    register = '+', -- which register to check
 	},
     },
     server = {
-	---@type nil | "Off" | "Critical" | "Error" | "Warning" | "Information" | "Verbose" | "All"
+	---@type nil | 'Off' | 'Critical' | 'Error' | 'Warning' | 'Information' | 'Verbose' | 'All'
 	log_level = nil,
     },
     notifications = {
@@ -37,6 +37,6 @@ dotnet.setup({
     }
 })
 
-vim.keymap.set("n", "<leader>rp", function()
+vim.keymap.set('n', '<leader>rp', function()
     dotnet.run_project()
-end, { desc = "Run .NET project" })
+end, { desc = 'Run .NET project' })
