@@ -20,12 +20,6 @@ end, { desc = "Close all other buffers" })
 -- Paste over visual selection and retain paste buffer
 vim.keymap.set("x", "<leader>p", "'_dP", { desc = "Paste over selection without overwriting register" })
 
--- LSP code actions
--- vim.keymap.set({'n', 'x'}, '<leader>a', '<cmd>lua require('fastaction').code_action()<cr>', { desc = 'Show LSP code actions' })
-vim.keymap.set({ "n", "x" }, "<leader>ca", function()
-  vim.lsp.buf.code_action { apply = true }
-end, { desc = "Apply first LSP code action" })
-
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true, desc = "Scroll down and center cursor" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true, silent = true, desc = "Scroll up and center cursor" })
