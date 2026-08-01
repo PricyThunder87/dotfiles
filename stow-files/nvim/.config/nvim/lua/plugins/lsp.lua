@@ -83,3 +83,7 @@ require("conform").setup {
     timeout_ms = 500,
   },
 }
+
+vim.keymap.set("n", "<leader>fmt", function()
+  require("conform").format()
+end)
