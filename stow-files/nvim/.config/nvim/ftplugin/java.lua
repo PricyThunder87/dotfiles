@@ -1,1 +1,1 @@
-require('nvim-jdtls').setup()
+require("nvim-jdtls").setup()

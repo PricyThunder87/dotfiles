@@ -11,6 +11,7 @@ vim.pack.add({
     { src = 'https://github.com/nvim-treesitter/nvim-treesitter', name = 'nvim-treesitter' },
     { src = 'https://github.com/Chaitanyabsprip/fastaction.nvim', name = 'fastaction' },
     { src = 'https://github.com/rachartier/tiny-inline-diagnostic.nvim', name = 'tiny-inline-diagnostic' },
+    { src = 'https://github.com/stevearc/conform.nvim', name = 'conform'},
 
     -- Editor
     { src = 'https://github.com/nvim-mini/mini.nvim', name = 'mini' },

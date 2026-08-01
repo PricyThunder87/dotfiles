@@ -1,1 +1,1 @@
-require('telescope-lsp-handlers').setup()
+require("telescope-lsp-handlers").setup()

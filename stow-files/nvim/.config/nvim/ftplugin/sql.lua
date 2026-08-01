@@ -1,1 +1,1 @@
-require('mssql.nvim').setup()
+require("mssql.nvim").setup()
