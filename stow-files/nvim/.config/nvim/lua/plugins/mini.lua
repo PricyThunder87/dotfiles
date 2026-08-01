@@ -30,6 +30,14 @@ require('mini.files').setup({
     windows = { max_number = 3, preview = true, width_preview = 75 },
 })
 
+vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesWindowUpdate',
+    callback = function(args)
+	vim.wo[args.data.win_id].number = true
+	vim.wo[args.data.win_id].relativenumber = true
+    end,
+})
+
 require('mini.indentscope').setup({
     draw = {
 	delay = 0,
