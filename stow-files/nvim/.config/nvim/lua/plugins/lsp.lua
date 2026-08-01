@@ -8,9 +8,18 @@ require("mason").setup {
   },
 }
 
+local lspconfig = require "lspconfig"
 require("mason-lspconfig").setup {
   ensure_installed = { "lua_ls" },
   automatic_enable = true,
+  handlers = {
+    function(server_name)
+      if server_name == "jdtls" then
+        return
+      end
+      lspconfig[server_name].setup {}
+    end,
+  },
 }
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -70,6 +79,7 @@ require("conform").setup {
   formatters_by_ft = {
     lua = { "stylua" },
     rust = { "rustfmt" },
+    java = { "clang-format" },
     javascript = { "prettierd" },
     javascriptreact = { "prettierd" },
     typescript = { "prettierd" },
