@@ -1,6 +1,6 @@
 vim.cmd.colorscheme 'retrobox'
 
-vim.pack.add({'https://gitlab.com/motaz-shokry/gruvbox.nvim'})
+vim.pack.add({ { src = 'https://gitlab.com/motaz-shokry/gruvbox.nvim', name = 'gruvbox' } })
 require('gruvbox').setup({
     variant = 'medium',
     enable = {
@@ -9,3 +9,5 @@ require('gruvbox').setup({
 })
 
 vim.cmd.colorscheme 'gruvbox'
+
+
