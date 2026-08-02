@@ -16,6 +16,7 @@ vim.pack.add {
   -- Editor
   { src = "https://github.com/nvim-mini/mini.nvim", name = "mini" },
   { src = "https://github.com/tpope/vim-repeat", name = "vim-repeat" },
+  { src = "https://github.com/CoreyKaylor/diffbandit.nvim", name = "diffbandit" },
   { src = "https://github.com/brenoprata10/nvim-highlight-colors", name = "nvim-highlight-colors" },
   { src = "https://github.com/brenoprata10/nvim-highlight-colors", name = "nvim-highlight-colors" },
 
@@ -51,3 +52,4 @@ require "plugins.lsp"
 require "plugins.mini"
 require "plugins.telescope"
 require "plugins.essential-term"
+require "plugins.diffbandit"
