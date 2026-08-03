@@ -8,10 +8,13 @@ vim.pack.add {
   { src = "https://github.com/williamboman/mason.nvim", name = "mason" },
   { src = "https://github.com/williamboman/mason-lspconfig.nvim", name = "mason-lspconfig" },
   { src = "https://github.com/ray-x/lsp_signature.nvim", name = "lsp_signature" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "nvim-treesitter" },
   { src = "https://github.com/Chaitanyabsprip/fastaction.nvim", name = "fastaction" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim", name = "tiny-inline-diagnostic" },
   { src = "https://github.com/stevearc/conform.nvim", name = "conform" },
+
+  -- Tree-sitter
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "nvim-treesitter" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", name = "nvim-treesitter-textobjects" },
 
   -- Editor
   { src = "https://github.com/nvim-mini/mini.nvim", name = "mini" },
@@ -51,5 +54,5 @@ vim.pack.add {
 require "plugins.lsp"
 require "plugins.mini"
 require "plugins.telescope"
-require "plugins.essential-term"
 require "plugins.diffbandit"
+require "plugins.essential-term"
