@@ -29,6 +29,7 @@ imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 require("mini.files").setup {
   windows = { max_number = 3, preview = true, width_preview = 75 },
 }
+
 require "plugins.mini-files-git-integration"
 
 vim.api.nvim_create_autocmd("User", {
@@ -36,6 +37,37 @@ vim.api.nvim_create_autocmd("User", {
   callback = function(args)
     vim.wo[args.data.win_id].number = true
     vim.wo[args.data.win_id].relativenumber = true
+  end,
+})
+
+local mini_files = require "mini.files"
+
+-- Set focused directory as current working directory
+local set_cwd = function()
+  local path = (mini_files.get_fs_entry() or {}).path
+  if path == nil then
+    return vim.notify "Cursor is not on valid entry"
+  end
+  vim.fn.chdir(vim.fs.dirname(path))
+  vim.notify("Set working directory to " .. vim.fn.getcwd())
+end
+
+-- Yank in register full path of entry under cursor
+local yank_path = function()
+  local path = (mini_files.get_fs_entry() or {}).path
+  if path == nil then
+    return vim.notify "Cursor is not on valid entry"
+  end
+  vim.fn.setreg(vim.v.register, path)
+  vim.notify("Yanked directory " .. path)
+end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "MiniFilesBufferCreate",
+  callback = function(args)
+    local b = args.data.buf_id
+    vim.keymap.set("n", "g~", set_cwd, { buffer = b, desc = "Set cwd" })
+    vim.keymap.set("n", "gy", yank_path, { buffer = b, desc = "Yank path" })
   end,
 })
 
