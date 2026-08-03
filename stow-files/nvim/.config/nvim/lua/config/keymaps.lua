@@ -19,6 +19,7 @@ end, { desc = "Close all other buffers" })
 
 -- Paste over visual selection and retain paste buffer
 vim.keymap.set("x", "<leader>p", "'_dP", { desc = "Paste over selection without overwriting register" })
+vim.keymap.set({ "n", "x" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 -- Move cursor to centre of screen when scrolling
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true, silent = true, desc = "Scroll down and center cursor" })
