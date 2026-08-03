@@ -29,6 +29,7 @@ imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 require("mini.files").setup {
   windows = { max_number = 3, preview = true, width_preview = 75 },
 }
+require "plugins.mini-files-git-integration"
 
 vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesWindowUpdate",
