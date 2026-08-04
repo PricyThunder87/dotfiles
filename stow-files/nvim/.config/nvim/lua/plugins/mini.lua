@@ -82,6 +82,7 @@ require("mini.indentscope").setup {
 
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Launch Mini.Files" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files current directory" })
+vim.keymap.set("n", "<leader>fz", "<cmd>Pick grep_live<cr>", { desc = "Live grep in current directory" })
 vim.keymap.set("n", "<leader>fc", function()
   require("mini.pick").builtin.files(nil, {
     source = {
