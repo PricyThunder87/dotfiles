@@ -16,7 +16,7 @@ require("mini.surround").setup()
 require("mini.tabline").setup()
 
 require("mini.completion").setup {
-  delay = { completion = 0, info = 0, signature = 50 },
+  delay = { completion = 0, info = 0, signature = 0 },
 }
 
 local imap_expr = function(lhs, rhs)
