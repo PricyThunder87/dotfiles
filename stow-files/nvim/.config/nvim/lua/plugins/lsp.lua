@@ -88,6 +88,7 @@ require("conform").setup {
     cs = { "csharpier" },
     python = { "ruff" },
     razor = { "razorstyle" },
+    go = { "gofumpt" },
   },
   formatters = {
     razorstyle = {
