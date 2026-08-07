@@ -83,8 +83,18 @@ require("mini.indentscope").setup {
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Launch Mini.Files" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files current directory" })
 
-vim.keymap.set("n", "<leader>fz", function()
+vim.keymap.set("n", "<leader>fZ", function()
   local current_path = vim.uv.fs_realpath(vim.fn.expand "%:p:h")
+  require("mini.pick").builtin.grep_live(nil, {
+    source = {
+      cwd = current_path,
+      name = current_path,
+    },
+  })
+end, { desc = "Live grep in current directory" })
+
+vim.keymap.set("n", "<leader>fz", function()
+  local current_path = vim.fn.getcwd()
   require("mini.pick").builtin.grep_live(nil, {
     source = {
       cwd = current_path,
