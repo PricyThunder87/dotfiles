@@ -39,15 +39,9 @@ local config = {
   init_options = {
     extendedClientCapablities = jdtls.extendedClientCapablities,
   },
-  -- Fix highlighting
-  on_attach = function(client, bufnr)
-    client.server_capabilities.semanticTokensProvider = nil
-  end,
 }
 
 jdtls.start_or_attach(config)
-
-vim.treesitter.start(vim.bufnr, "java")
 
 -- Silence notification spam
 local mini_notify = require "mini.notify"

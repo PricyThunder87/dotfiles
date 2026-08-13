@@ -1,3 +1,5 @@
+vim.notify "Received"
+
 local dotnet = require "easy-dotnet"
 
 dotnet.setup {
@@ -41,5 +43,23 @@ dotnet.setup {
 vim.keymap.set("n", "<leader>rp", function()
   dotnet.run_project()
 end, { desc = "Run .NET project" })
+
+vim.filetype.add {
+  extension = {
+    razor = "razor",
+    cshtml = "razor",
+  },
+}
+
+vim.treesitter.language.register("razor", "razor")
+
+local ts_fix_group = vim.api.nvim_create_augroup("TSLanguageFix", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "razor" },
+  group = ts_fix_group,
+  callback = function()
+    vim.treesitter.start()
+  end,
+})
 
 vim.treesitter.start()

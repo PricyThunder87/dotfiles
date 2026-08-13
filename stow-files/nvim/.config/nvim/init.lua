@@ -35,7 +35,9 @@ vim.pack.add {
     name = "telescope-fzf-native",
     build = "make",
   },
+}
 
+vim.pack.add({
   -- Language Specific
   -- C#
   { src = "https://github.com/GustavEikaas/easy-dotnet.nvim", name = "easy-dotnet" },
@@ -48,7 +50,7 @@ vim.pack.add {
   -- Web
   { src = "https://github.com/windwp/nvim-ts-autotag", name = "nvim-ts-autotag" },
   { src = "https://github.com/maxmellon/vim-jsx-pretty", name = "vim-jsx-pretty" },
-}
+}, { load = false })
 
 require "plugins.lsp"
 require "plugins.ccc"
