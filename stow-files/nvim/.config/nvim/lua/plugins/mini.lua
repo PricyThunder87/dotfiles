@@ -91,17 +91,17 @@ vim.keymap.set("n", "<leader>fZ", function()
       name = current_path,
     },
   })
-end, { desc = "Live grep in current directory" })
+end, { desc = "Live grep in current buffer directory" })
 
 vim.keymap.set("n", "<leader>fz", function()
-  local current_path = vim.fn.getcwd()
+  local cwd = vim.fn.getcwd()
   require("mini.pick").builtin.grep_live(nil, {
     source = {
-      cwd = current_path,
-      name = current_path,
+      cwd = cwd,
+      name = cwd,
     },
   })
-end, { desc = "Live grep in current directory" })
+end, { desc = "Live grep in current working directory" })
 
 vim.keymap.set("n", "<leader>fc", function()
   require("mini.pick").builtin.files(nil, {
