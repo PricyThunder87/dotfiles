@@ -49,14 +49,8 @@ mini_notify.setup {
   content = {
     sort = function(notif_arr)
       local filtered = vim.tbl_filter(function(notif)
-        local is_lsp = notif.data and notif.data.source == "lsp_progress"
-        if is_lsp then
-          local msg = notif.msg or ""
-          if msg:lower():find "validate documents" then
-            return false
-          end
-        end
-        return true
+        local is_lsp = notif.data and string.find(notif.msg, "jdtls") ~= nil
+        return is_lsp == false
       end, notif_arr)
 
       return mini_notify.default_sort(filtered)

@@ -20,6 +20,7 @@ vim.pack.add {
   { src = "https://github.com/uga-rosa/ccc.nvim", name = "ccc" },
   { src = "https://github.com/nvim-mini/mini.nvim", name = "mini" },
   { src = "https://github.com/tpope/vim-repeat", name = "vim-repeat" },
+  -- this is a change
   { src = "https://github.com/CoreyKaylor/diffbandit.nvim", name = "diffbandit" },
 
   -- Terminal
