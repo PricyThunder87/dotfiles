@@ -1,3 +1,7 @@
+hl.env("XCURSOR_SIZE", "32")
+hl.env("HYPRCURSOR_SIZE", "32")
+hl.env("HYPRCURSOR_THEME", "Bibata_Ghost")
+
 hl.config {
   general = {
     gaps_in = 8,
