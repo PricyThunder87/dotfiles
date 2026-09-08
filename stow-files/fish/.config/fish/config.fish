@@ -161,7 +161,7 @@ if status is-interactive
 
     # Aliases
     alias gittree "git ls-files | tree --fromfile -a"
-    alias paru "paru --noconfirm"
+    alias paru "paru --skipreview"
     alias cp "cp -v"
     alias oc "opencode ./"
     alias nv "nvim"
