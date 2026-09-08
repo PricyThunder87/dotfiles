@@ -1,5 +1,5 @@
 # Set default font
-font-family = IoskeleyMono Nerd Font
+font-family = IoskeleyMonoTerm Nerd Font Mono
 
 # Synthetise a missing font style
 font-synthetic-style = bold,italic,bold-italic
