@@ -1,6 +1,5 @@
 require("mini.ai").setup()
 require("mini.align").setup()
-require("mini.cmdline").setup()
 require("mini.diff").setup()
 require("mini.extra").setup()
 require("mini.git").setup()
@@ -14,17 +13,6 @@ require("mini.splitjoin").setup()
 require("mini.starter").setup()
 require("mini.surround").setup()
 require("mini.tabline").setup()
-
-require("mini.completion").setup {
-  delay = { completion = 0, info = 0, signature = 0 },
-}
-
-local imap_expr = function(lhs, rhs)
-  vim.keymap.set("i", lhs, rhs, { expr = true })
-end
-
-imap_expr("<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]])
-imap_expr("<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]])
 
 require("mini.files").setup {
   windows = { max_number = 3, preview = true, width_preview = 75 },

@@ -4,6 +4,8 @@ require "config.colorscheme"
 
 vim.pack.add {
   -- LSP
+  { src = "https://github.com/saghen/blink.lib", name = "blink-lib" },
+  { src = "https://github.com/saghen/blink.cmp", name = "blink-cmp" },
   { src = "https://github.com/williamboman/mason.nvim", name = "mason" },
   { src = "https://github.com/stevearc/conform.nvim", name = "conform" },
   { src = "https://github.com/neovim/nvim-lspconfig", name = "nvim-lspconfig" },
@@ -56,6 +58,7 @@ vim.pack.add({
 require "plugins.lsp"
 require "plugins.ccc"
 require "plugins.mini"
+require "plugins.blink-cmp"
 require "plugins.telescope"
 require "plugins.diffbandit"
 require "plugins.essential-term"
