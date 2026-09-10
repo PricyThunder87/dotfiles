@@ -4,7 +4,7 @@ cmp.build():pwait()
 cmp.setup {
   completion = {
     keyword = { range = "full" },
-    list = { selection = { preselect = false, auto_insert = false } },
+    list = { selection = { preselect = false, auto_insert = true } },
     ghost_text = { enabled = true },
   },
   sources = {
