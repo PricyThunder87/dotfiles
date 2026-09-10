@@ -21,11 +21,11 @@ cmp.setup {
   },
   keymap = {
     preset = "none",
-    ["<Tab>"] = { "select_next" },
-    ["<S-Tab>"] = { "select_prev" },
-    ["<C-n>"] = { "select_next" },
-    ["<C-p>"] = { "select_prev" },
-    ["<C-y>"] = { "select_and_accept" },
-    ["<C-Space>"] = { "select_and_accept" },
+    ["<Tab>"] = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
+    ["<C-n>"] = { "select_next", "fallback" },
+    ["<C-p>"] = { "select_prev", "fallback" },
+    ["<C-y>"] = { "select_and_accept", "fallback" },
+    ["<C-Space>"] = { "select_and_accept", "fallback" },
   },
 }
