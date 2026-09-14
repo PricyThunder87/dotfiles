@@ -6,19 +6,12 @@ cmp.setup {
     keyword = { range = "full" },
     list = { selection = { preselect = false, auto_insert = true } },
     ghost_text = { enabled = true },
+    accept = { auto_brackets = { enabled = true } },
   },
   sources = {
     default = { "lsp", "path", "snippets" },
   },
   signature = { enabled = true },
-  cmdline = {
-    keymap = { preset = "inherit" },
-    completion = {
-      list = { selection = { preselect = false, auto_insert = true } },
-      menu = { auto_show = true },
-      ghost_text = { enabled = true },
-    },
-  },
   keymap = {
     preset = "none",
     ["<Tab>"] = { "select_next", "fallback" },
@@ -27,5 +20,13 @@ cmp.setup {
     ["<C-p>"] = { "select_prev", "fallback" },
     ["<C-y>"] = { "select_and_accept", "fallback" },
     ["<C-Space>"] = { "select_and_accept", "fallback" },
+  },
+  cmdline = {
+    keymap = { preset = "inherit" },
+    completion = {
+      list = { selection = { preselect = false, auto_insert = true } },
+      menu = { auto_show = true },
+      ghost_text = { enabled = true },
+    },
   },
 }

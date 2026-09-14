@@ -79,7 +79,7 @@ require("conform").setup {
   formatters_by_ft = {
     lua = { "stylua" },
     rust = { "rustfmt" },
-    java = { "clang-format" },
+    java = { "palantir-java-format" },
     javascript = { "prettierd" },
     javascriptreact = { "prettierd" },
     typescript = { "prettierd" },
