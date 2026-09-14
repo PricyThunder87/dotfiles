@@ -28,23 +28,23 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local builtin = require "telescope.builtin"
 
     -- Telescope Pickers
-    vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
-    vim.keymap.set("n", "gr", builtin.lsp_references, opts)
-    vim.keymap.set("n", "<leader>d", builtin.diagnostics, opts)
+    vim.keymap.set("n", "gd", builtin.lsp_definitions, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
+    vim.keymap.set("n", "gr", builtin.lsp_references, vim.tbl_extend("force", opts, { desc = "Show references" }))
+    vim.keymap.set("n", "<leader>d", builtin.diagnostics, vim.tbl_extend("force", opts, { desc = "Show diagnostics" }))
 
     -- Non-Picker LSP Utilities
-    vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover documentation" }))
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
+    vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, vim.tbl_extend("force", opts, { desc = "Signature help" }))
 
     -- Diagnostic Navigation
     vim.keymap.set("n", "[d", function()
       vim.diagnostic.jump { count = -1, float = true }
-    end, opts)
+    end, vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
     vim.keymap.set("n", "]d", function()
       vim.diagnostic.jump { count = 1, float = true }
-    end, opts)
+    end, vim.tbl_extend("force", opts, { desc = "Next diagnostic" }))
   end,
 })
 
@@ -105,4 +105,4 @@ require("conform").setup {
 
 vim.keymap.set("n", "<leader>fmt", function()
   require("conform").format()
-end)
+end, { desc = "Format buffer" })

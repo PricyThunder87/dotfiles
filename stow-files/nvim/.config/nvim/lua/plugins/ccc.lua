@@ -8,4 +8,4 @@ ccc.setup {
   },
 }
 
-vim.keymap.set("n", "<leader>pic", "<cmd>CccPick<cr>")
+vim.keymap.set("n", "<leader>pic", "<cmd>CccPick<cr>", { desc = "Pick color" })
