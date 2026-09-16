@@ -58,6 +58,7 @@ vim.pack.add({
 require "plugins.lsp"
 require "plugins.ccc"
 require "plugins.mini"
+require "plugins.autotag"
 require "plugins.blink-cmp"
 require "plugins.telescope"
 require "plugins.diffbandit"
