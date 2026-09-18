@@ -22,7 +22,6 @@ vim.pack.add {
   { src = "https://github.com/uga-rosa/ccc.nvim", name = "ccc" },
   { src = "https://github.com/nvim-mini/mini.nvim", name = "mini" },
   { src = "https://github.com/tpope/vim-repeat", name = "vim-repeat" },
-  -- this is a change
   { src = "https://github.com/CoreyKaylor/diffbandit.nvim", name = "diffbandit" },
 
   -- Terminal
@@ -46,6 +45,7 @@ vim.pack.add({
   { src = "https://github.com/GustavEikaas/easy-dotnet.nvim", name = "easy-dotnet" },
   -- Java
   { src = "https://github.com/mfussenegger/nvim-jdtls", name = "nvim-jdtls" },
+  { src = "https://github.com/PricyThunder87/easy-java.nvim", name = "easy-java" },
   -- Markdown
   { src = "https://github.com/the-mayankjha/fk_markdown.nvim", name = "fk-markdown" },
   -- SQL
@@ -61,5 +61,6 @@ require "plugins.mini"
 require "plugins.autotag"
 require "plugins.blink-cmp"
 require "plugins.telescope"
+require "plugins.easy-java"
 require "plugins.diffbandit"
 require "plugins.essential-term"
