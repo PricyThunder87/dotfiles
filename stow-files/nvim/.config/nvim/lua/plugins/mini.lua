@@ -99,6 +99,10 @@ require("mini.indentscope").setup {
 }
 
 vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Launch Mini.Files" })
+vim.keymap.set("n", "<leader>E", function()
+  local dir = vim.uv.fs_realpath(vim.fn.expand "%:p:h") or vim.fn.getcwd()
+  require("mini.files").open(dir)
+end, { desc = "Launch Mini.Files in buffer directory" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files current directory" })
 
 vim.keymap.set("n", "<leader>fZ", function()
