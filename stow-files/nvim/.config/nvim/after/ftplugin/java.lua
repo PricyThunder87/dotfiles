@@ -1,3 +1,9 @@
+if vim.b.jdtls_lsp_setup then
+  return
+end
+
+vim.b.jdtls_lsp_setup = true
+
 local jdtls = require "jdtls"
 
 local root_dir = jdtls.setup.find_root { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
