@@ -14,6 +14,7 @@ local jdtls_path = jdtls_pkg:get_install_path()
 
 local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
 local config_dir = jdtls_path .. "/config_linux"
+local lombok_path = vim.fn.stdpath "data" .. "/mason/packages/jdtls/lombok.jar"
 
 local config = {
   cmd = {
@@ -28,6 +29,7 @@ local config = {
     "java.base/java.util=ALL-UNNAMED",
     "--add-opens",
     "java.base/java.lang=ALL-UNNAMED",
+    "-javaagent:" .. lombok_path,
     "-jar",
     launcher_jar,
     "-configuration",
