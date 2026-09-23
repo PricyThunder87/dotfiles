@@ -1,2 +1,2 @@
-require("fk_markdown").setup()
-vim.keymap.set("n", "<leader>rmd", "<cmd>FkPreviewToggle<cr>", { desc = "Toggle Markdown preview" })
+require("render-markdown").setup()
+vim.keymap.set("n", "<leader>rmd", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Markdown inline preview" })

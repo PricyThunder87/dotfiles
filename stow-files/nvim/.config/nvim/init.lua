@@ -47,7 +47,8 @@ vim.pack.add({
   { src = "https://github.com/mfussenegger/nvim-jdtls", name = "nvim-jdtls" },
   { src = "https://github.com/PricyThunder87/easy-java.nvim", name = "easy-java" },
   -- Markdown
-  { src = "https://github.com/the-mayankjha/fk_markdown.nvim", name = "fk-markdown" },
+  { src = "https://github.com/meanderingprogrammer/render-markdown.nvim", name = "render-markdown" },
+  { src = "https://github.com/iamcco/markdown-preview.nvim", name = "markdown-preview" },
   -- SQL
   { src = "https://github.com/Kurren123/mssql.nvim", name = "mssql" },
   -- Web
