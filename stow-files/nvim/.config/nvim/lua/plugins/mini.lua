@@ -103,11 +103,23 @@ vim.keymap.set("n", "<leader>E", function()
   local dir = vim.uv.fs_realpath(vim.fn.expand "%:p:h") or vim.fn.getcwd()
   require("mini.files").open(dir)
 end, { desc = "Launch Mini.Files in buffer directory" })
-vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Find files current directory" })
+
+local pick = require "mini.pick"
+
+vim.keymap.set("n", "<leader>ff", function()
+  local cwd = vim.fn.getcwd()
+  pick.builtin.files(nil, {
+    source = {
+      cwd = cwd,
+      name = cwd,
+    },
+  })
+end, { desc = "Find files working directory" })
+vim.keymap.set("n", "<leader>fF", "<cmd>Pick files<cr>", { desc = "Find files current directory" })
 
 vim.keymap.set("n", "<leader>fZ", function()
   local current_path = vim.uv.fs_realpath(vim.fn.expand "%:p:h")
-  require("mini.pick").builtin.grep_live(nil, {
+  pick.builtin.grep_live(nil, {
     source = {
       cwd = current_path,
       name = current_path,
@@ -117,7 +129,7 @@ end, { desc = "Live grep in current buffer directory" })
 
 vim.keymap.set("n", "<leader>fz", function()
   local cwd = vim.fn.getcwd()
-  require("mini.pick").builtin.grep_live(nil, {
+  pick.builtin.grep_live(nil, {
     source = {
       cwd = cwd,
       name = cwd,
@@ -126,7 +138,7 @@ vim.keymap.set("n", "<leader>fz", function()
 end, { desc = "Live grep in current working directory" })
 
 vim.keymap.set("n", "<leader>fc", function()
-  require("mini.pick").builtin.files(nil, {
+  pick.builtin.files(nil, {
     source = {
       cwd = vim.fn.stdpath "config",
       name = "Neovim Config",
