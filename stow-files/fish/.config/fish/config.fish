@@ -14,7 +14,7 @@ if status is-interactive
     # Start SSH agent
     eval (ssh-agent -c) >/dev/null 2>&1
     ssh-add ~/.ssh/personal-github-key >/dev/null 2>&1
-    ssh-add ~/.ssh/school-gitlab-key >/dev/null 2>&1
+    ssh-add ~/.ssh/group-project-key >/dev/null 2>&1
 
     # Add .NET tools to path
     fish_add_path /home/noahsakko/.dotnet/tools
