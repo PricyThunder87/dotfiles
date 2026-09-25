@@ -1,3 +1,26 @@
+-- vim.pack has no `build` field: run the plugin's build.lua (lazy.nvim
+-- convention) or `spec.data.build` after install/update. Must be registered
+-- before vim.pack.add() to catch installs.
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    if ev.data.kind ~= "install" and ev.data.kind ~= "update" then return end
+    local build = ev.data.path .. "/build.lua"
+    local run
+    if vim.uv.fs_stat(build) then
+      run = function() dofile(build) end
+    elseif ev.data.spec.data and ev.data.spec.data.build then
+      local shell = ev.data.spec.data.build
+      run = function()
+        local r = vim.system(vim.split(shell, " "), { cwd = ev.data.path, text = true }):wait()
+        if r.code ~= 0 then error(shell .. " failed:\n" .. r.stderr) end
+      end
+    end
+    if not run then return end
+    local ok, err = pcall(run)
+    if not ok then vim.notify(("%s build failed:\n%s"):format(ev.data.spec.name, err), vim.log.levels.ERROR) end
+  end,
+})
+
 require "config.options"
 require "config.keymaps"
 require "config.colorscheme"
@@ -35,7 +58,7 @@ vim.pack.add {
   {
     src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
     name = "telescope-fzf-native",
-    build = "make",
+    data = { build = "make" },
   },
 }
 
@@ -47,8 +70,7 @@ vim.pack.add({
   { src = "https://github.com/mfussenegger/nvim-jdtls", name = "nvim-jdtls" },
   { src = "https://github.com/PricyThunder87/easy-java.nvim", name = "easy-java" },
   -- Markdown
-  { src = "https://github.com/meanderingprogrammer/render-markdown.nvim", name = "render-markdown" },
-  { src = "https://github.com/iamcco/markdown-preview.nvim", name = "markdown-preview" },
+  { src = "https://github.com/blackhat-7/vellum.nvim", name = "vellum" },
   -- SQL
   { src = "https://github.com/Kurren123/mssql.nvim", name = "mssql" },
   -- Web
