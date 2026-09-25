@@ -24,9 +24,9 @@ require("mason-lspconfig").setup {
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
-    local opts = { buffer = args.buf, remap = false }
-
+    local opts = { buffer = args.buf, remap = false, silent = true }
     local builtin = require "telescope.builtin"
+
     vim.keymap.set("n", "<leader>d", builtin.diagnostics, vim.tbl_extend("force", opts, { desc = "Show diagnostics" }))
     vim.keymap.set(
       "n",
@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       builtin.lsp_references,
       vim.tbl_extend("force", opts, { desc = "vim.lsp.buf.references()" })
     )
-
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, vim.tbl_extend("force", opts, { desc = "Signature help" }))
   end,
 })
