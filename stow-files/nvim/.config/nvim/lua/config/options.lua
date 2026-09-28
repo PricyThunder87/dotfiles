@@ -29,6 +29,10 @@ vim.opt.listchars:append "trail:·"
 -- Maintain undo history between sessions
 vim.o.undofile = true
 
+-- Auto-sync files between buffers
+vim.opt.autoread = true
+vim.opt.swapfile = false
+
 -- AUTOCOMMANDS
 
 -- Disable auto-comment extension on newline
