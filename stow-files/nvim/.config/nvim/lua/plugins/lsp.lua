@@ -34,7 +34,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
       builtin.lsp_references,
       vim.tbl_extend("force", opts, { desc = "vim.lsp.buf.references()" })
     )
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set(
+      "n",
+      "gd",
+      vim.lsp.buf.definition,
+      vim.tbl_extend("force", opts, { desc = "vim.lsp.buf.definition()" })
+    )
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, vim.tbl_extend("force", opts, { desc = "Signature help" }))
   end,
 })
