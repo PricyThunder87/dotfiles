@@ -12,6 +12,9 @@ clipboard-write = allow
 # Notifications
 app-notifications = no-clipboard-copy
 
+# Cursor Shaders
+custom-shader = shaders/cursor_warp.glsl
+
 # Gruvbox Dark (matching waybar)
 background = #282828
 foreground = #ebdbb2
