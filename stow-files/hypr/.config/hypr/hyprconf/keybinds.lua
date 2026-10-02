@@ -67,7 +67,7 @@ for i = 1, 10 do
   hl.bind("SUPER+" .. key, hl.dsp.focus { workspace = i }, { description = "Go to workspace " .. i })
   hl.bind(
     "SUPER+SHIFT+" .. key,
-    hl.dsp.exec_cmd("hyprctl dispatch movetoworkspace " .. i),
+    hl.dsp.window.move { workspace = tostring(i) },
     { description = "Move window to workspace " .. i }
   )
 end
