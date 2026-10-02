@@ -1,13 +1,18 @@
 vim.cmd.colorscheme "retrobox"
-
 vim.pack.add {
-  { src = "https://github.com/Aejkatappaja/cendre", name = "cendre" },
+  { src = "https://github.com/navarasu/onedark.nvim", name = "onedark" },
+  -- { src = "https://github.com/Aejkatappaja/cendre", name = "cendre" },
   -- { src = "https://gitlab.com/motaz-shokry/gruvbox.nvim", name = "gruvbox" },
 }
 
-require("cendre").setup {
-  background = "soft",
+require("onedark").load()
+require("onedark").setup {
+  style = "warmer",
 }
+
+-- require("cendre").setup {
+--   background = "soft",
+-- }
 
 -- require("gruvbox").setup {
 --   variant = "medium",
@@ -16,4 +21,4 @@ require("cendre").setup {
 --   },
 -- }
 
-vim.cmd.colorscheme "cendre"
+vim.cmd.colorscheme "onedark"
