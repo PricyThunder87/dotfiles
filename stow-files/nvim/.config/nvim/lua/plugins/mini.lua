@@ -145,3 +145,7 @@ vim.keymap.set("n", "<leader>fc", function()
     },
   })
 end, { desc = "Find files in Neovim config" })
+
+vim.api.nvim_set_hl(0, "MiniTablineCurrent", { link = "TabLineSel" })
+vim.api.nvim_set_hl(0, "MiniTablineHidden", { link = "TabLine" })
+vim.api.nvim_set_hl(0, "MiniTablineVisible", { link = "TabLine" })
